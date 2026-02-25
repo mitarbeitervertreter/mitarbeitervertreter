@@ -192,33 +192,32 @@ p{
 
 .brandline{
   display:flex;
-  gap:16px;
+  gap:22px;
   flex-wrap:wrap;
-  margin:20px 0 10px;
+  margin:26px 0 14px;
 }
 
 .brandtag{
   display:inline-flex;
-  align-items:baseline;
-  padding:14px 18px;
-  border-radius:16px;
-  border:1px solid var(--line);
-  background: rgba(255,255,255,.12);
-  font-weight:950;
-  font-size:28px;
-  letter-spacing:.6px;
+  align-items:flex-start;
+  padding:10px 0;
+  border:none;
+  background:transparent;
+  font-weight:500;              /* nicht fett */
+  font-size:32px;               /* etwas größer */
+  letter-spacing:1px;
   text-transform:uppercase;
 }
 
 .brandtag sup{
-  font-size: 0.55em;
-  line-height: 0;
-  vertical-align: baseline;
-  position: relative;
-  top: -0.6em;
+  font-size:0.75em;             /* deutlich größer */
+  position:relative;
+  top:-0.55em;                  /* sauber hochgezogen */
+  margin-left:10px;             /* Abstand zum Wort */
   color: var(--bordeaux);
-  font-weight: 900;
+  font-weight:600;              /* leicht betont */
 }
+
 /* ===== Sprachumschalter ===== */
 
 .langswitch{
