@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kleines BR 1×1 – mitarbeitervertreter</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* kleine Ergänzung nur für diese Seite */
+    details{
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:14px;
+      padding:12px 12px;
+      background: rgba(255,255,255,.03);
+      margin-top:12px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:900;
+      color:#e9eefc;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{display:none;}
+    .hint{color:#b7c2e3; margin-top:8px;}
+    .chip{
+      display:inline-block;
+      margin-left:8px;
+      font-size:12px;
+      font-weight:800;
+      color:#b7c2e3;
+      border:1px solid rgba(255,255,255,.12);
+      padding:3px 8px;
+      border-radius:999px;
+      vertical-align:middle;
+      background: rgba(255,255,255,.02);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">mitarbeitervertreter</div>
+        <div class="links">
+          <a href="index.html">Start</a>
+          <a href="news.html">News</a>
+          <a href="mission.html">Unsere Mission</a>
+          <a href="br-1x1.html">Kleines BR 1×1</a>
+          <a href="termine.html">Termine</a>
+          <a href="ueber-uns.html">Über uns</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap" style="margin-top:18px;">
+    <section class="card">
+      <h1>Kleines BR 1×1</h1>
+      <p>
+        Kurze Erklärungen zu häufigen Begriffen und Abläufen. Klick auf einen Punkt, um ihn aufzuklappen.
+      </p>
+    </section>
+
+    <section class="card" style="margin-top:14px;">
+      <h2>Themen</h2>
+
+      <details>
+        <summary>Was ist eine Versetzung? <span class="chip">Begriff</span></summary>
+        <p class="hint">
+          Allgemein versteht man darunter, dass sich der Arbeitsort, die Tätigkeit oder die Einordnung so ändert,
+          dass es für dich „spürbar“ ist. (Die konkrete Definition hängt vom Einzelfall und den Regeln im Betrieb ab.)
+        </p>
+        <p class="hint">
+          Tipp: Wenn du betroffen bist, dokumentiere kurz: Was ändert sich? Ab wann? Wer hat es gesagt? Gibt es etwas schriftlich?
+        </p>
+      </details>
+
+      <details>
+        <summary>Wie läuft es typischerweise ab, wenn etwas geändert wird? <span class="chip">Ablauf</span></summary>
+        <p class="hint">
+          Oft gibt es ein Gespräch, danach (manchmal) eine schriftliche Mitteilung, und je nach Thema sind Beteiligungen/Anhörungen möglich.
+          Wenn du unsicher bist: melde dich frühzeitig – dann kann man Dinge oft besser klären.
+        </p>
+      </details>
+
+      <details>
+        <summary>Was bedeutet „Anhörung“? <span class="chip">Begriff</span></summary>
+        <p class="hint">
+          Anhörung heißt: Vor bestimmten Entscheidungen werden Beteiligte/Interessenvertretungen angehört.
+          Welche Rechte/Fristen konkret gelten, hängt vom Thema ab.
+        </p>
+      </details>
+
+      <details>
+        <summary>Was ist eine Betriebsvereinbarung (BV)? <span class="chip">Begriff</span></summary>
+        <p class="hint">
+          Eine BV ist eine Regelung zwischen Arbeitgeber und Betriebsrat für betriebliche Themen (z. B. Arbeitszeit, Prozesse, Verhalten, Tools).
+          Welche BVs es bei euch gibt, können wir hier später verlinken oder zusammenfassen.
+        </p>
+      </details>
+
+      <details>
+        <summary>Wie kann ich ein Thema melden? <span class="chip">Kontakt</span></summary>
+        <p class="hint">
+          Am besten kurz und konkret: Worum geht’s? Seit wann? Wer ist beteiligt? Gibt es Unterlagen (E-Mail, Schreiben)?
+          Kontaktmöglichkeiten stehen auf „Über uns“.
+        </p>
+      </details>
+
+    </section>
+
+    <div class="footer">
+      © <span id="year"></span> mitarbeitervertreter · Stand: <span id="stand"></span>
+    </div>
+  </main>
+
+  <script>
+    const d = new Date();
+    document.getElementById('year').textContent = d.getFullYear();
+    document.getElementById('stand').textContent = d.toLocaleDateString('de-DE');
+  </script>
+</body>
+</html>

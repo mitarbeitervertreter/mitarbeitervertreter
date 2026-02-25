@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>News – mitarbeitervertreter</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">mitarbeitervertreter</div>
+        <div class="links">
+          <a href="index.html">Start</a>
+          <a href="news.html">News</a>
+          <a href="mission.html">Unsere Mission</a>
+          <a href="br-1x1.html">Kleines BR 1×1</a>
+          <a href="termine.html">Termine</a>
+          <a href="ueber-uns.html">Über uns</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap" style="margin-top:18px;">
+
+    <section class="card">
+      <h1>News</h1>
+      <p>Hier informieren wir regelmäßig über aktuelle Themen.</p>
+    </section>
+
+    <!-- NEWS EINTRAG 1 -->
+    <section class="card" style="margin-top:14px;">
+      <div class="badge">05.06.2025</div>
+      <h2>Beispiel-News: Infoveranstaltung geplant</h2>
+      <p>
+        Am XX.XX.2025 findet eine Informationsveranstaltung zur anstehenden BR-Wahl statt.
+        Weitere Details folgen in Kürze.
+      </p>
+    </section>
+
+    <!-- NEWS EINTRAG 2 -->
+    <section class="card" style="margin-top:14px;">
+      <div class="badge">01.06.2025</div>
+      <h2>Website ist online</h2>
+      <p>
+        Unsere neue Informationsseite ist gestartet. Hier bündeln wir alle wichtigen Informationen
+        für euch transparent und übersichtlich.
+      </p>
+    </section>
+
+    <div class="footer">
+      © <span id="year"></span> mitarbeitervertreter · Stand: <span id="stand"></span>
+    </div>
+
+  </main>
+
+  <script>
+    const d = new Date();
+    document.getElementById('year').textContent = d.getFullYear();
+    document.getElementById('stand').textContent = d.toLocaleDateString('de-DE');
+  </script>
+
+</body>
+</html>

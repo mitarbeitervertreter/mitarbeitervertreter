@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Termine – mitarbeitervertreter</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">mitarbeitervertreter</div>
+        <div class="links">
+          <a href="index.html">Start</a>
+          <a href="news.html">News</a>
+          <a href="mission.html">Unsere Mission</a>
+          <a href="br-1x1.html">Kleines BR 1×1</a>
+          <a href="termine.html">Termine</a>
+          <a href="ueber-uns.html">Über uns</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap" style="margin-top:18px;">
+
+    <section class="card">
+      <h1>Termine</h1>
+      <p>Hier sammeln wir wichtige Termine (z. B. Sprechzeiten, Infoveranstaltungen, Fristen).</p>
+    </section>
+
+    <section class="card" style="margin-top:14px;">
+      <h2>Übersicht</h2>
+      <table class="table">
+        <tr>
+          <th>Datum</th>
+          <th>Uhrzeit</th>
+          <th>Termin</th>
+          <th>Ort / Hinweis</th>
+        </tr>
+        <tr>
+          <td>TT.MM.JJJJ</td>
+          <td>HH:MM</td>
+          <td>Sprechstunde</td>
+          <td>Raum / Teams / Telefon</td>
+        </tr>
+        <tr>
+          <td>TT.MM.JJJJ</td>
+          <td>HH:MM</td>
+          <td>Infoveranstaltung</td>
+          <td>Kantine / Raum / Link</td>
+        </tr>
+        <tr>
+          <td>TT.MM.JJJJ</td>
+          <td>—</td>
+          <td>Frist / wichtiger Stichtag</td>
+          <td>Kurzbeschreibung</td>
+        </tr>
+      </table>
+      <p style="margin-top:10px;">
+        Tipp: Neue Termine einfach als neue Zeile oben einfügen (neueste zuerst).
+      </p>
+    </section>
+
+    <section class="card" style="margin-top:14px;">
+      <h2>Optional: Bild auf dieser Seite</h2>
+      <p>Wenn du willst: Bild in <strong>assets/images</strong> ablegen und <strong>termine.jpg</strong> nennen.</p>
+      <div class="hero" style="margin-top:12px;">
+        <img src="assets/images/termine.jpg" alt="Termine (optional)" onerror="this.style.display='none'; this.parentElement.querySelector('.caption').textContent='(Noch kein termine.jpg hinterlegt – optional)';" />
+        <div class="caption">(Optionales Bild: termine.jpg)</div>
+      </div>
+    </section>
+
+    <div class="footer">
+      © <span id="year"></span> mitarbeitervertreter · Stand: <span id="stand"></span>
+    </div>
+
+  </main>
+
+  <script>
+    const d = new Date();
+    document.getElementById('year').textContent = d.getFullYear();
+    document.getElementById('stand').textContent = d.toLocaleDateString('de-DE');
+  </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Über uns – mitarbeitervertreter</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">mitarbeitervertreter</div>
+        <div class="links">
+          <a href="index.html">Start</a>
+          <a href="news.html">News</a>
+          <a href="mission.html">Unsere Mission</a>
+          <a href="br-1x1.html">Kleines BR 1×1</a>
+          <a href="termine.html">Termine</a>
+          <a href="ueber-uns.html">Über uns</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap" style="margin-top:18px;">
+
+    <section class="card">
+      <h1>Über uns</h1>
+      <p>
+        Wir sind eure Ansprechpartner für Fragen, Anliegen und Themen rund um Mitbestimmung
+        und Zusammenarbeit im Betrieb.
+      </p>
+    </section>
+
+    <section class="card" style="margin-top:14px;">
+      <h2>Kontakt</h2>
+      <p>
+        📧 E-Mail:
+        <a href="mailto:mitarbeitervertreter@gmx.de">
+          mitarbeitervertreter@gmx.de
+        </a>
+      </p>
+
+      <p>
+        🕒 Sprechzeiten:
+        <br>
+        Dienstag 14:00 – 16:00 Uhr
+        <br>
+        oder nach Vereinbarung
+      </p>
+    </section>
+
+    <section class="card" style="margin-top:14px;">
+      <h2>Unser Team</h2>
+      <p>Hier könnt ihr euch kurz vorstellen (je 2–3 Sätze pro Person).</p>
+
+      <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap:14px; margin-top:12px;">
+
+        <div class="card" style="padding:14px;">
+          <div class="hero">
+            <img src="assets/images/team1.jpg" alt="Teammitglied 1"
+                 onerror="this.style.display='none'; this.parentElement.querySelector('.caption').textContent='(Optional: team1.jpg)';">
+            <div class="caption">Teammitglied 1</div>
+          </div>
+          <p>Kurze Vorstellung in 2–3 Sätzen.</p>
+        </div>
+
+        <div class="card" style="padding:14px;">
+          <div class="hero">
+            <img src="assets/images/team2.jpg" alt="Teammitglied 2"
+                 onerror="this.style.display='none'; this.parentElement.querySelector('.caption').textContent='(Optional: team2.jpg)';">
+            <div class="caption">Teammitglied 2</div>
+          </div>
+          <p>Kurze Vorstellung in 2–3 Sätzen.</p>
+        </div>
+
+        <div class="card" style="padding:14px;">
+          <div class="hero">
+            <img src="assets/images/team3.jpg" alt="Teammitglied 3"
+                 onerror="this.style.display='none'; this.parentElement.querySelector('.caption').textContent='(Optional: team3.jpg)';">
+            <div class="caption">Teammitglied 3</div>
+          </div>
+          <p>Kurze Vorstellung in 2–3 Sätzen.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="footer">
+      © <span id="year"></span> mitarbeitervertreter · Stand: <span id="stand"></span>
+    </div>
+
+  </main>
+
+  <script>
+    const d = new Date();
+    document.getElementById('year').textContent = d.getFullYear();
+    document.getElementById('stand').textContent = d.toLocaleDateString('de-DE');
+  </script>
+
+</body>
+</html>

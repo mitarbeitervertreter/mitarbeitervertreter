@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>mitarbeitervertreter</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">mitarbeitervertreter</div>
+        <div class="links">
+          <a href="index.html">Start</a>
+          <a href="news.html">News</a>
+          <a href="mission.html">Unsere Mission</a>
+          <a href="br-1x1.html">Kleines BR 1×1</a>
+          <a href="termine.html">Termine</a>
+          <a href="ueber-uns.html">Über uns</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="grid two" style="margin-top:18px;">
+      <section class="card">
+        <span class="badge">Informationsseite</span>
+        <h1>Gemeinsam stark für die Belegschaft.</h1>
+        <p>
+          Hier findest du aktuelle Infos, Termine und kompakte Erklärungen rund um Betriebsratsthemen.
+          Transparent, verständlich und auf den Punkt.
+        </p>
+
+        <div class="btnrow">
+          <a class="btn primary" href="news.html">Zu den News</a>
+          <a class="btn" href="br-1x1.html">Zum BR 1×1</a>
+        </div>
+
+        <div style="margin-top:14px;">
+          <table class="table">
+            <tr>
+              <th>Quick Links</th>
+              <th>Hinweis</th>
+            </tr>
+            <tr>
+              <td><a href="termine.html">Wichtige Termine</a></td>
+              <td>Wahl-/Info-Termine, Sprechzeiten, Fristen</td>
+            </tr>
+            <tr>
+              <td><a href="mission.html">Unsere Mission</a></td>
+              <td>Wofür wir stehen und was wir erreichen wollen</td>
+            </tr>
+            <tr>
+              <td><a href="ueber-uns.html">Über uns</a></td>
+              <td>Wer wir sind und wie du uns erreichst</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <aside class="card">
+        <div class="hero">
+          <img src="assets/images/hero.jpg" alt="Gruppenfoto" />
+          <div class="caption">Euer Team – gemeinsam für eine starke Mitbestimmung.</div>
+        </div>
+
+        <div style="margin-top:14px;">
+          <h2>Kontakt</h2>
+          <p>Du erreichst uns unter deiner bestehenden E-Mail-Adresse (kommt gleich auf die Über-uns-Seite).</p>
+        </div>
+      </aside>
+    </div>
+
+    <section class="card" style="margin-top:14px;">
+      <h2>Was findest du hier?</h2>
+      <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap:14px;">
+        <div class="card" style="padding:14px;">
+          <h2 style="margin:0 0 6px;">News</h2>
+          <p>Kurze Updates: Was passiert gerade, was ist wichtig, was steht an.</p>
+          <a class="btn" href="news.html">Öffnen</a>
+        </div>
+        <div class="card" style="padding:14px;">
+          <h2 style="margin:0 0 6px;">Unsere Mission</h2>
+          <p>Unser Anspruch: fair, transparent, nahbar. Was wir verbessern wollen.</p>
+          <a class="btn" href="mission.html">Öffnen</a>
+        </div>
+        <div class="card" style="padding:14px;">
+          <h2 style="margin:0 0 6px;">Kleines BR 1×1</h2>
+          <p>Begriffe & Abläufe verständlich erklärt (z. B. Versetzung, Anhörung, BV).</p>
+          <a class="btn" href="br-1x1.html">Öffnen</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      © <span id="year"></span> mitarbeitervertreter · Stand: <span id="stand"></span>
+    </div>
+  </main>
+
+  <script>
+    const d = new Date();
+    document.getElementById('year').textContent = d.getFullYear();
+    document.getElementById('stand').textContent = d.toLocaleDateString('de-DE');
+  </script>
+</body>
+</html>
