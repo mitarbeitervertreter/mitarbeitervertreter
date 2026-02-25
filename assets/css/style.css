@@ -210,12 +210,12 @@ p{
 }
 
 .brandtag sup{
-  font-size:0.75em;             /* deutlich größer */
-  position:relative;
-  top:-0.55em;                  /* sauber hochgezogen */
-  margin-left:10px;             /* Abstand zum Wort */
+  font-size: 0.8em;        /* etwas größer */
+  position: relative;
+  top: -0.38em;            /* weniger hoch */
+  margin-left: 6px;        /* weniger Abstand */
   color: var(--bordeaux);
-  font-weight:600;              /* leicht betont */
+  font-weight: 800;        /* kräftiger */
 }
 
 /* ===== Sprachumschalter ===== */
