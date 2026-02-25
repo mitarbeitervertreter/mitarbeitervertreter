@@ -211,12 +211,14 @@ p{
 }
 
 .brandtag sup{
-  margin-left:6px;
-  font-size:16px;
+  font-size: 0.55em;
+  line-height: 0;
+  vertical-align: baseline;
+  position: relative;
+  top: -0.6em;
   color: var(--bordeaux);
-  font-weight:950;
+  font-weight: 900;
 }
-
 /* ===== Sprachumschalter ===== */
 
 .langswitch{
