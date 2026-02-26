@@ -3,35 +3,124 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mitarbeitervertreter – BR-Wahl 2026</title>
+  <title>mitarbeitervertreter</title>
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
-<body style="display:flex; align-items:center; justify-content:center; min-height:100vh; text-align:center;">
+<body>
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">mitarbeitervertreter</div>
 
-  <div class="wrap">
+        <div class="links">
+          <a href="index.html">Start</a>
+          <a href="news.html">News</a>
+          <a href="mission.html">Unsere Mission</a>
+          <a href="br-1x1.html">Kleines BR 1×1</a>
+          <a href="termine.html">Termine</a>
+          <a href="rede.html">Rede</a>
+          <a href="ueber-uns.html">Über uns</a>
+        </div>
 
-    <h1 style="font-size:44px; margin-bottom:30px; font-weight:500;">
-      Mitarbeitervertreter
-    </h1>
+        <div class="langswitch">
+          <a class="active" href="index.html">DE</a>
+          <a href="en/index.html">EN</a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-    <div class="brandline" style="justify-content:center;">
-      <div class="brandtag">MUT<sup>2</sup></div>
-      <div class="brandtag">KOMPETENZ<sup>2</sup></div>
-      <div class="brandtag">TEAM<sup>2</sup></div>
-      <div class="brandtag">UNABHÄNGIG<sup>2</sup></div>
+  <main class="wrap">
+    <div class="grid two" style="margin-top:18px;">
+      <section class="card">
+        <span class="badge">BR-Wahl 2026 · 6.–7. Mai</span>
+        <h1>Für eine starke Interessenvertretung 2026.</h1>
+        <p>
+          Wir stehen für eine Mitbestimmung, die vorausschauend denkt, fachlich fundiert handelt
+          und nah an den Menschen bleibt – respektvoll, klar und verlässlich.
+        </p>
+
+        <div class="brandline">
+          <div class="brandtag">MUT<sup>2</sup></div>
+          <div class="brandtag">KOMPETENZ<sup>2</sup></div>
+          <div class="brandtag">TEAM<sup>2</sup></div>
+          <div class="brandtag">UNABHÄNGIG<sup>2</sup></div>
+        </div>
+
+        <div class="btnrow">
+          <a class="btn primary" href="rede.html">Rede zur Versammlung</a>
+          <a class="btn" href="br-1x1.html">Zum BR 1×1</a>
+        </div>
+
+        <div style="margin-top:14px;">
+          <table class="table">
+            <tr>
+              <th>Wichtig</th>
+              <th>Details</th>
+            </tr>
+            <tr>
+              <td>Belegschaftsversammlung</td>
+              <td><strong>12.03.</strong>, <strong>10:00 Uhr</strong> · <strong>Kasino Süd</strong> (erster öffentlicher Auftritt)</td>
+            </tr>
+            <tr>
+              <td>BR-Wahl 2026</td>
+              <td><strong>6. & 7. Mai 2026</strong></td>
+            </tr>
+            <tr>
+              <td>Kontakt</td>
+              <td><a href="ueber-uns.html">mitarbeitervertreter@gmx.de</a></td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <aside class="card">
+        <div class="hero">
+          <img src="assets/images/hero.jpg" alt="Gruppenfoto" />
+          <div class="caption">Gemeinsam – klar, kompetent und ansprechbar.</div>
+        </div>
+
+        <div style="margin-top:14px;">
+          <h2>Aktuell</h2>
+          <p>
+            Auf <a href="news.html">News</a> sammeln wir Updates. Im <a href="termine.html">Terminbereich</a> findest du alle wichtigen Daten.
+          </p>
+        </div>
+      </aside>
     </div>
 
-    <p style="margin-top:40px; font-size:18px;">
-      Für eine starke Interessenvertretung 2026.
-    </p>
+    <section class="card" style="margin-top:14px;">
+      <h2>Navigation</h2>
+      <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap:14px;">
+        <div class="card" style="padding:14px;">
+          <h2 style="margin:0 0 6px;">News</h2>
+          <p>Kurze Updates: was wichtig ist, was ansteht.</p>
+          <a class="btn" href="news.html">Öffnen</a>
+        </div>
+        <div class="card" style="padding:14px;">
+          <h2 style="margin:0 0 6px;">Unsere Mission</h2>
+          <p>Wofür wir stehen und wie wir arbeiten.</p>
+          <a class="btn" href="mission.html">Öffnen</a>
+        </div>
+        <div class="card" style="padding:14px;">
+          <h2 style="margin:0 0 6px;">Rede</h2>
+          <p>Unsere Position und unser Anspruch – vollständig nachlesbar.</p>
+          <a class="btn" href="rede.html">Öffnen</a>
+        </div>
+      </div>
+    </section>
 
-    <p style="margin-top:12px; font-size:16px;">
-      Unsere Website befindet sich im Aufbau.  
-      Weitere Informationen folgen in Kürze.
-    </p>
+    <div class="footer">
+      © <span id="year"></span> mitarbeitervertreter · Stand: <span id="stand"></span>
+    </div>
+  </main>
 
-  </div>
-
+  <script>
+    const d = new Date();
+    document.getElementById('year').textContent = d.getFullYear();
+    document.getElementById('stand').textContent = d.toLocaleDateString('de-DE');
+  </script>
 </body>
 </html>
+
