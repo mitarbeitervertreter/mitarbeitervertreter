@@ -461,3 +461,21 @@ main{flex:1; padding:28px 0 44px;}
   }
 
 }
+/* ===== Schritt 7: Startseite Hero + erste Card kompakter (Mobile) ===== */
+@media (max-width: 520px){
+
+  /* Hero-Bild etwas höher, damit es "atmen" kann */
+  .hero img{
+    height: 280px;
+  }
+
+  /* Die erste Card direkt nach dem Hero (deine Termine-Box) kompakter */
+  .hero + .card{
+    padding: 16px;
+    border-radius: var(--r-lg);
+  }
+
+  .hero + .card h2{
+    font-size: 18px;
+  }
+}
