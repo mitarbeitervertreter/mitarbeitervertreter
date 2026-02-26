@@ -393,3 +393,31 @@ main{flex:1; padding:28px 0 44px;}
   .footer-wrap{grid-template-columns:1fr;}
   .footer-links{justify-content:flex-start;}
 }
+/* ===== Header Feinschliff (v2) ===== */
+.site-header{
+  background: rgba(243,244,246,.92);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 10px 22px rgba(17,24,39,.06);
+}
+
+.navbar{
+  padding: 10px 0;           /* kompakter */
+}
+
+.brand-mark{
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+}
+
+.nav-links{
+  background: rgba(255,255,255,.85);  /* etwas solider */
+}
+
+.nav-links a.is-active{
+  box-shadow: 0 6px 14px rgba(122,23,48,.10);
+}
+
+.nav-links a:hover{
+  background: rgba(122,23,48,.06);    /* ruhiger */
+}
