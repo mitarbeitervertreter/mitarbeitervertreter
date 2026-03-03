@@ -174,19 +174,32 @@ p{
 
 /* ===== Hero Text Box ===== */
 
+/* Fix: Overlay zurücksetzen (kein großes padding mehr) */
 .hero__overlay{
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:flex-end;  /* erstmal ganz unten stabil */
-  padding: 0 40px 40px;
-  padding: 70% 40px 40px;  /* startet im unteren Drittel */
+  position: absolute;
+  inset: 0;
+  pointer-events: none; /* Overlay selbst reagiert nicht, nur die Box */
 }
 
+/* Positioniere die Content-Box absolut innerhalb des Hero (unteres Drittel) */
 .hero__content{
-  max-width:600px;
+  position: absolute;
+  left: 30px;          /* Abstand von links */
+  right: auto;
+  bottom: 33%;         /* startet im unteren Drittel */
+  max-width: 600px;
+  pointer-events: auto; /* Box ist klickbar */
 }
 
+/* Optional: kleine Anpassung für sehr kleine Bildschirme */
+@media (max-width: 700px){
+  .hero__content{
+    left: 16px;
+    right: 16px;
+    bottom: 20%;       /* auf kleinen Screens etwas höher setzen */
+    max-width: none;
+  }
+}
 .hero__box{
   padding:20px 24px;
   border-radius:18px;
