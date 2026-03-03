@@ -266,3 +266,84 @@ p{
   }
 
 }
+/* ===== Landing Hero Overlay ===== */
+
+.hero--campaign{
+  position: relative;
+}
+
+.hero--campaign img{
+  height: clamp(320px, 52vh, 520px);
+  object-position: center top; /* Variante B: sauberer Crop */
+}
+
+.hero__overlay{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:flex-end;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.70) 0%,
+    rgba(0,0,0,.35) 55%,
+    rgba(0,0,0,.08) 100%
+  );
+}
+
+.hero__content{
+  padding: 18px 0 18px;
+  max-width: 720px;
+}
+
+.hero__title{
+  margin:0 0 8px;
+  font-size: clamp(26px, 3.8vw, 44px);
+  line-height: 1.1;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+}
+
+.hero__lead{
+  margin:0 0 14px;
+  color: rgba(255,255,255,.90);
+  font-size: clamp(15px, 1.6vw, 18px);
+}
+
+.hero__actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.hero__quicklinks{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top: 12px;
+}
+
+.ql{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.10);
+  color:#fff;
+  font-weight:800;
+  font-size: 13px;
+  text-decoration:none;
+}
+
+.ql:hover{
+  background: rgba(255,255,255,.16);
+  text-decoration:none;
+}
+
+/* Mobile Feinheiten */
+@media (max-width: 700px){
+  .hero__content{
+    padding: 16px 0 16px;
+  }
+}
