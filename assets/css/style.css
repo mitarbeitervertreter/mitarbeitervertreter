@@ -273,22 +273,17 @@ p{
   object-position: center top; /* Variante B: sauberer Crop */
 }
 
-.hero__overlay{
+..hero__overlay{
   position:absolute;
   inset:0;
   display:flex;
   align-items:flex-end;
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,.70) 0%,
-    rgba(0,0,0,.35) 55%,
-    rgba(0,0,0,.08) 100%
-  );
+  padding-bottom: 40px;   /* Abstand vom unteren Rand */
 }
 
 .hero__content{
-  padding: 18px 0 18px;
-  max-width: 720px;
+ max-width: 620px;
+  margin-left: 30px;      /* leicht von links eingerückt */
 }
 
 .hero__title{
