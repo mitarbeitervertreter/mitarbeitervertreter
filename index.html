@@ -7,31 +7,94 @@
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
-<body style="display:flex; align-items:center; justify-content:center; min-height:100vh; text-align:center;">
+<body>
 
-  <div class="wrap">
+  <!-- HEADER / NAV -->
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">mitarbeitervertreter</div>
 
-    <h1 style="font-size:44px; margin-bottom:30px; font-weight:500;">
-      Mitarbeitervertreter
-    </h1>
+        <div class="links">
+          <a href="index.html" class="active">Start</a>
+          <a href="ueber-uns.html">Kandidaten</a>
+          <a href="br-1x1.html">Kleines BR 1×1</a>
+          <a href="news.html">News</a>
+        </div>
 
-    <div class="brandline" style="justify-content:center;">
-      <div class="brandtag">MUT<sup>2</sup></div>
-      <div class="brandtag">KOMPETENZ<sup>2</sup></div>
-      <div class="brandtag">TEAM<sup>2</sup></div>
-      <div class="brandtag">UNABHÄNGIG<sup>2</sup></div>
+        <div class="langswitch">
+          <a class="active" href="index.html">DE</a>
+          <a href="en/index.html">EN</a>
+        </div>
+      </div>
     </div>
+  </header>
 
-    <p style="margin-top:40px; font-size:18px;">
-      Für eine starke Interessenvertretung 2026.
-    </p>
+  <main>
 
-    <p style="margin-top:12px; font-size:16px;">
-      Unsere Website befindet sich im Aufbau.  
-      Weitere Informationen folgen in Kürze.
-    </p>
+    <!-- HERO -->
+    <section class="hero hero--campaign">
+      <img src="assets/images/hero.jpg" alt="Mitarbeitervertreter – BR Wahl 2026">
 
-  </div>
+      <div class="hero__overlay">
+        <div class="wrap">
+          <div class="hero__content">
+            <h1 class="hero__title">Gemeinsam. Miteinander. Für euch.</h1>
+
+            <p class="hero__lead">
+              Infos zur BR-Wahl 2026, unsere Kandidaten, Themen und Updates – transparent und verständlich.
+            </p>
+
+            <div class="hero__actions">
+              <a class="btn primary" href="ueber-uns.html">Kandidaten</a>
+              <a class="btn" href="br-1x1.html">Kleines BR 1×1</a>
+              <a class="btn" href="news.html">Aktuelles</a>
+            </div>
+
+            <div class="hero__quicklinks" aria-label="Schnelllinks">
+              <a class="ql" href="https://www.youtube.com/watch?v=Tvz6zIN-K30" target="_blank" rel="noopener">▶️ Song</a>
+              <a class="ql" href="https://whatsapp.com/channel/0029Vb8lSlil7BeDe644k209" target="_blank" rel="noopener">💬 WhatsApp</a>
+              <a class="ql" href="https://instagram.com/mitarbeitervertreter" target="_blank" rel="noopener">📷 Instagram</a>
+              <a class="ql" href="mailto:mitarbeitervertreter@gmx.de">✉️ Mail</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- START-INHALT (erstmal kurz, bauen wir im nächsten Schritt aus) -->
+    <section class="wrap" style="margin-top:18px;">
+      <section class="card">
+        <span class="badge">BR-Wahl 2026</span>
+        <h2>Worum geht’s hier?</h2>
+        <p>
+          Diese Website ist eure zentrale Informationsseite: Wer wir sind, wofür wir stehen,
+          wie ein Betriebsrat arbeitet – und welche Themen ihr jederzeit vertraulich mit uns besprechen könnt.
+        </p>
+
+        <div class="brandline">
+          <div class="brandtag">MUT<sup>2</sup></div>
+          <div class="brandtag">KOMPETENZ<sup>2</sup></div>
+          <div class="brandtag">TEAM<sup>2</sup></div>
+          <div class="brandtag">UNABHÄNGIG<sup>2</sup></div>
+          <div class="brandtag">TRANSPARENZ<sup>2</sup></div>
+        </div>
+      </section>
+
+      <div class="footer">
+        © <span id="year"></span> mitarbeitervertreter · Stand: <span id="stand"></span>
+        · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const d = new Date();
+    document.getElementById('year').textContent = d.getFullYear();
+    document.getElementById('stand').textContent = d.toLocaleDateString('de-DE');
+  </script>
 
 </body>
 </html>
