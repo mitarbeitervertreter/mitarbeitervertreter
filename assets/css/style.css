@@ -158,12 +158,10 @@ p{
 /* ===== Hero vollständig anzeigen (kein Abschneiden) ===== */
 
 .hero--campaign{
-  max-width:1100px;        /* gleiche Breite wie Inhalt */
-  margin:30px auto 0;      /* mittig + Abstand oben */
-  border-radius:18px;
-  overflow:hidden;
-  border:1px solid var(--line);
-}
+  width:100px;
+  height:auto;
+  display:block;
+ }
 
 .hero--campaign img{
   width:100%;
@@ -185,7 +183,7 @@ p{
   position:absolute;
   left:50%;
   transform:translateX(-50%);
-  bottom:22%;          /* steuert die vertikale Position */
+  bottom:10%;          /* steuert die vertikale Position */
   max-width:650px;     /* etwas schmaler */
   width:90%;
 }
