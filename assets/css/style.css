@@ -159,7 +159,7 @@ p{
 
 .hero--campaign{
   position: relative;
-  width: 70%;          /* 15% links + 15% rechts weniger */
+  width: 80%;          /* 10% links + 10% rechts weniger */
   margin: 0 auto;      /* mittig */
   border-radius: 18px;
   overflow: hidden;
@@ -170,7 +170,7 @@ p{
   width: 100%;
   height: auto;
   display: block;
-  transform: scale(1.3);   /* ca. 30% größer */
+  transform: scale(1.5);   /* ca. 30% größer */
 }
 
 /* ===== Hero Text Box ===== */
