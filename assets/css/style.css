@@ -158,16 +158,17 @@ p{
 /* ===== Hero vollständig anzeigen (kein Abschneiden) ===== */
 
 .hero--campaign{
-  width:100px;
-  height:auto;
-  display:block;
- }
+  position: relative;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
 
 .hero--campaign img{
-  width:100%;
-  height:auto;             /* Höhe passt sich automatisch an */
-  display:block;
-  object-fit:contain;      /* GANZ WICHTIG: kein Abschneiden */
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* ===== Hero Text Box ===== */
@@ -182,9 +183,9 @@ p{
 .hero__content{
   position:absolute;
   left:50%;
-  transform:translateX(-50%);
-  bottom:10%;          /* steuert die vertikale Position */
-  max-width:650px;     /* etwas schmaler */
+  top:65%;
+  transform:translate(-50%, -50%);
+  max-width:650px;
   width:90%;
 }
 
