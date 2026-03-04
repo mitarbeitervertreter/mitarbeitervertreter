@@ -156,11 +156,11 @@ p{
 }
 
 /* ===== Hero vollständig anzeigen (kein Abschneiden) ===== */
-
+/* ===== HERO (Option B: stabiler Crop, mobil-first) ===== */
 .hero--campaign{
   position: relative;
-  width: 80%;          /* 10% links + 10% rechts weniger */
-  margin: 0 auto;      /* mittig */
+  width: min(80%, 1100px);
+  margin: 18px auto 0;
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -168,46 +168,65 @@ p{
 
 .hero--campaign img{
   width: 100%;
-  height: auto;
+  height: clamp(300px, 52vh, 520px);
   display: block;
-  transform: scale(1.1);   /* ca. 30% größer */
-  transform-origin: center top;  /* Bild wächst nach unten */
+  object-fit: cover;
+  object-position: center top;
 }
 
-/* ===== Hero Text Box ===== */
-
-/* Fix: Overlay zurücksetzen (kein großes padding mehr) */
-.hero__overlay{
-  position:absolute;
-  inset:0;
-}
-
-/* Positioniere die Content-Box absolut innerhalb des Hero (unteres Drittel) */
+/* Box sitzt unten im Bild */
 .hero__content{
-  position:absolute;
-  left:50%;
-  top:65%;
-  transform:translate(-50%, -50%);
-  max-width:650px;
-  width:90%;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 22px;
 }
 
-/* Optional: kleine Anpassung für sehr kleine Bildschirme */
-@media (max-width: 700px){
-  .hero__content{
-    left: 16px;
-    right: 16px;
-    bottom: 20%;       /* auf kleinen Screens etwas höher setzen */
-    max-width: none;
-  }
-}
+/* Box-Design */
 .hero__box{
-  padding:20px 28px;
-  border-radius:18px;
+  max-width: 680px;
+  width: 100%;
+  padding: 18px 22px;
+  border-radius: 18px;
   background: rgba(140,150,165,.92);
-  border:1px solid rgba(255,255,255,.2);
+  border: 1px solid rgba(255,255,255,.20);
   backdrop-filter: blur(6px);
-  display:inline-block;   /* Box nur so breit wie Inhalt */
+}
+
+.hero__title{
+  margin: 0 0 10px;
+  font-size: clamp(22px, 3.8vw, 44px);
+  line-height: 1.1;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+}
+
+.hero__quicklinks{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ql{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.10);
+  color: #fff;
+  font-weight: 800;
+  font-size: 13px;
+  text-decoration: none;
+}
+.ql:hover{ background: rgba(255,255,255,.16); }
+
+@media (max-width: 700px){
+  .hero--campaign{ width: calc(100% - 40px); }
+  .hero__content{ padding: 14px; }
+  .hero__box{ padding: 16px; }
 }
 
 /* ===== Badge ===== */
@@ -285,11 +304,6 @@ p{
 
 /* ===== Responsive ===== */
 
-@media (max-width: 900px){
-
-  .hero img{
-    height:250px;
-  }
 
   .brandtag{
     font-size:22px;
@@ -301,78 +315,3 @@ p{
 
 }
 /* ===== Landing Hero Overlay ===== */
-
-.hero--campaign{
-  position: relative;
-}
-
-.hero--campaign img{
-  height: clamp(320px, 52vh, 520px);
-  object-position: center top; /* Variante B: sauberer Crop */
-}
-
-..hero__overlay{
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:flex-end;
-  padding-bottom: 40px;   /* Abstand vom unteren Rand */
-}
-
-.hero__content{
- max-width: 620px;
-  margin-left: 30px;      /* leicht von links eingerückt */
-}
-
-.hero__title{
-  margin:0 0 8px;
-  font-size: clamp(26px, 3.8vw, 44px);
-  line-height: 1.1;
-  letter-spacing: .3px;
-  text-transform: uppercase;
-}
-
-.hero__lead{
-  margin:0 0 14px;
-  color: rgba(255,255,255,.90);
-  font-size: clamp(15px, 1.6vw, 18px);
-}
-
-.hero__actions{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-.hero__quicklinks{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top: 12px;
-}
-
-.ql{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:8px 12px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.18);
-  background: rgba(255,255,255,.10);
-  color:#fff;
-  font-weight:800;
-  font-size: 13px;
-  text-decoration:none;
-}
-
-.ql:hover{
-  background: rgba(255,255,255,.16);
-  text-decoration:none;
-}
-
-/* Mobile Feinheiten */
-@media (max-width: 700px){
-  .hero__content{
-    padding: 16px 0 16px;
-  }
-}
