@@ -155,11 +155,11 @@ p{
   margin-top:16px;
 }
 
-/* ===== Hero vollständig anzeigen (kein Abschneiden) ===== */
+
 /* ===== HERO (Option B: stabiler Crop, mobil-first) ===== */
 .hero--campaign{
   position: relative;
-  width: min(80%, 1100px);
+  width: min(90%, 1100px);
   margin: 18px auto 0;
   border-radius: 18px;
   overflow: hidden;
@@ -180,7 +180,8 @@ p{
   inset: 0;
   display: flex;
   align-items: flex-end;
-  padding: 22px;
+  justify-content: center; /* <-- neu: Box horizontal mittig */
+  padding: 16px;
 }
 
 /* Box-Design */
