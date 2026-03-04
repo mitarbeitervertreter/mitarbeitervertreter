@@ -171,6 +171,7 @@ p{
   height: auto;
   display: block;
   transform: scale(1.1);   /* ca. 30% größer */
+  transform-origin: center top;  /* Bild wächst nach unten */
 }
 
 /* ===== Hero Text Box ===== */
@@ -201,12 +202,14 @@ p{
   }
 }
 .hero__box{
-  padding:20px 24px;
+  padding:20px 28px;
   border-radius:18px;
-  background: rgba(140,150,165,.92); /* heller als Kartenfarbe */
+  background: rgba(140,150,165,.92);
   border:1px solid rgba(255,255,255,.2);
   backdrop-filter: blur(6px);
+  display:inline-block;   /* Box nur so breit wie Inhalt */
 }
+
 /* ===== Badge ===== */
 
 .badge{
