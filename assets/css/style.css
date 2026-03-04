@@ -310,25 +310,32 @@ p{
   h1{ font-size:28px; }
 }
 
-/* ===== Election-Block (ruhig, zentriert, aus einem Guss) ===== */
+/* ===== Election-Block: eine Box, Breite nach Inhalt ===== */
 .election{
+  display: inline-block;          /* Box passt sich der Textbreite an */
   text-align: center;
-  margin: 0 0 18px;
-  padding: 12px 14px 14px;
+  margin: 0 auto 18px;            /* zentrieren + Abstand nach unten */
+  padding: 14px 18px;
   border-radius: 16px;
   background: rgba(255,255,255,.06);
   border: 1px solid rgba(255,255,255,.12);
 }
 
+/* Wichtig: damit margin:auto wirkt */
+.card .election{ display: table; } /* Alternative Zentrierung, super stabil */
+
+/* "Betriebsratswahl 2026" ohne Badge-Look */
 .election .badge{
-  margin: 0 0 10px;
-  padding: 6px 12px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0 0 8px;
   font-size: 13px;
-  font-weight: 900;
-  background: rgba(255,255,255,.12);
-  border: 1px solid rgba(255,255,255,.14);
+  font-weight: 800;
+  opacity: .9;
 }
 
+/* Hauptzeile */
 .election-list{
   margin: 0;
   font-weight: 950;
@@ -339,14 +346,15 @@ p{
   text-underline-offset: 6px;
 }
 
+/* "Liste 2" ohne Pill/Box */
 .election-number{
   margin-top: 8px;
-  display: inline-block;
+  display: block;
+  padding: 0;
+  border: none;
+  background: transparent;
   font-size: 13px;
-  font-weight: 900;
-  letter-spacing: .3px;
-  padding: 6px 12px;
-  border-radius: 999px;
-  background: rgba(122,31,43,.22); /* bordeaux transparent */
-  border: 1px solid rgba(122,31,43,.45);
+  font-weight: 800;
+  opacity: .9;
+  letter-spacing: .2px;
 }
