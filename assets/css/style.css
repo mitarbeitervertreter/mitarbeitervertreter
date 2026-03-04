@@ -243,6 +243,23 @@ p{
   margin-bottom:10px;
 }
 
+.election{
+  text-align:center;
+  margin-bottom:18px;
+}
+
+.election-list{
+  font-weight:800;
+  font-size:20px;
+  text-decoration: underline;
+  margin-top:6px;
+}
+
+.election-number{
+  font-size:14px;
+  opacity:.9;
+}
+
 /* ===== Branding MUT² etc. ===== */
 
 .brandline{
