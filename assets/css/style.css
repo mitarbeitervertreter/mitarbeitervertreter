@@ -176,19 +176,18 @@ p{
 
 /* Fix: Overlay zurücksetzen (kein großes padding mehr) */
 .hero__overlay{
-  position: absolute;
-  inset: 0;
-  pointer-events: none; /* Overlay selbst reagiert nicht, nur die Box */
+  position:absolute;
+  inset:0;
 }
 
 /* Positioniere die Content-Box absolut innerhalb des Hero (unteres Drittel) */
 .hero__content{
-  position: absolute;
-  left: 30px;          /* Abstand von links */
-  right: auto;
-  bottom: 33%;         /* startet im unteren Drittel */
-  max-width: 600px;
-  pointer-events: auto; /* Box ist klickbar */
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:22%;          /* steuert die vertikale Position */
+  max-width:650px;     /* etwas schmaler */
+  width:90%;
 }
 
 /* Optional: kleine Anpassung für sehr kleine Bildschirme */
