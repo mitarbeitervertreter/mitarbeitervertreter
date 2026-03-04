@@ -159,7 +159,8 @@ p{
 /* ===== HERO (Option B: stabiler Crop, mobil-first) ===== */
 .hero--campaign{
   position: relative;
-  width: min(90%, 1100px);
+  width: 90%;
+  max-width: 1400px;
   margin: 18px auto 0;
   border-radius: 18px;
   overflow: hidden;
@@ -181,7 +182,7 @@ p{
   display: flex;
   align-items: flex-end;
   justify-content: center; /* <-- neu: Box horizontal mittig */
-  padding: 16px;
+  padding: 2px;
 }
 
 /* Box-Design */
