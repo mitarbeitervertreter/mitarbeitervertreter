@@ -686,3 +686,67 @@ p{
   color: var(--muted);
   line-height: 1.45;
 }
+/* (1) Kandidatenkarte: Hover/Tap Feedback */
+.candidate-tile{
+  transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+  will-change: transform;
+}
+.candidate-tile:hover{
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,.28);
+}
+.candidate-tile:active{
+  transform: translateY(0px) scale(.99);
+}
+
+.candidate-photo img{
+  transition: transform .18s ease;
+}
+.candidate-tile:hover .candidate-photo img{
+  transform: scale(1.03);
+}
+
+/* Modal: kleine Einblend-Animation */
+.modal-sheet{
+  animation: sheetIn .18s ease;
+}
+@keyframes sheetIn{
+  from{ transform: translateX(-50%) translateY(10px); opacity:.0; }
+  to{ transform: translateX(-50%) translateY(0px); opacity:1; }
+}
+@media (max-width: 640px){
+  @keyframes sheetIn{
+    from{ transform: translateY(14px); opacity:.0; }
+    to{ transform: translateY(0px); opacity:1; }
+  }
+}
+
+/* Motion-Respekt */
+@media (prefers-reduced-motion: reduce){
+  .candidate-tile, .candidate-photo img{ transition:none !important; }
+  .modal-sheet{ animation:none !important; }
+}
+
+/* Design-Idee: Werte-Chips im Steckbrief */
+.valuechips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top: 10px;
+}
+.valuechip{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.22);
+  background: rgba(0,0,0,.18);
+  color: var(--text);
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+.valuechip strong{
+  color: var(--bordeaux);
+  font-weight: 900;
+}
