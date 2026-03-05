@@ -638,19 +638,20 @@ p{
 /* Steckbrief Layout */
 .profile-top{
   display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  grid-template-columns: 260px 1fr;
+  gap: 18px;
 }
 @media (max-width: 720px){
   .profile-top{ grid-template-columns: 1fr; }
 }
 
-.profile-photo{
-  border-radius: 14px;
-  overflow:hidden;
-  border: 1px solid var(--line);
-  background: rgba(255,255,255,.06);
+.profile-photo img{
+  width:100%;
+  max-height:320px;
+  object-fit:cover;
+  display:block;
 }
+
 .profile-photo img{
   width:100%;
   height:100%;
@@ -699,9 +700,23 @@ p{
   transform: translateY(0px) scale(.99);
 }
 
+.candidate-photo{
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.06);
+}
+
 .candidate-photo img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  object-position: 50% 20%;
   transition: transform .18s ease;
 }
+
 .candidate-tile:hover .candidate-photo img{
   transform: scale(1.03);
 }
