@@ -200,25 +200,59 @@
             <span class="badge" id="profileAge"></span>
             <span class="badge" id="profileSince"></span>
           </div>
+          <div id="profileValues" class="valuechips" aria-label="Werte"></div>
         </div>
       </div>
+
+      /* (2) Q&A: bessere Lesbarkeit */
+.qa-item{
+  padding: 12px 0;
+}
+.qa-q{
+  font-weight: 900;
+  letter-spacing: .1px;
+}
+.qa-q::before{
+  content:"";
+  display:inline-block;
+  width:10px;
+  height:10px;
+  border-radius: 3px;
+  margin-right: 8px;
+  background: var(--bordeaux);
+  opacity: .9;
+  transform: translateY(1px);
+}
+.qa-a{
+  margin-left: 18px;
+  color: var(--muted);
+}
 
       <div id="profileQA" class="profile-qa"></div>
     </div>
   </div>
 </div>
 
-  <script>
-  // Steckbrief-Daten (Yvonne vollständig, Rest zunächst Platzhalter)
+ <script>
+  // Einheitliche Werte-Chips (Standard)
+  const DEFAULT_VALUES = ["MUT²", "KOMPETENZ²", "TEAM²", "UNABHÄNGIG²", "TRANSPARENZ²"];
+
+  // Einheitliche Frage-Struktur (Standard-Text, falls noch nicht gepflegt)
+  const DEFAULT_QA = [
+    { q: "Warum kandidierst du auf dieser Liste – und warum gerade jetzt?", a: "Inhalt folgt." },
+    { q: "Welche Stärke bringst du in den Betriebsrat ein?", a: "Inhalt folgt." },
+    { q: "Wenn du am Ende der Amtszeit sagen könntest „Das hat sich wirklich verbessert“ – was wäre das?", a: "Inhalt folgt." },
+    { q: "Was ist dir im Umgang mit Kolleginnen und Kollegen besonders wichtig?", a: "Inhalt folgt." },
+    { q: "Eine kleine Anekdote über mich / Darüber kann ich lachen:", a: "Inhalt folgt." }
+  ];
+
+  // Pflege nur das, was wirklich individuell ist:
+  // - age, since, qa (optional), values (optional)
   const PROFILES = {
     "1": {
-      no: 1,
-      name: "Yvonne Jones",
-      area: "H · HGS",
-      img: "assets/img/kandidaten/01-yvonne-jones.jpg",
-      alt: "Foto von Yvonne Jones",
       age: 47,
       since: "32 Jahre (im September)",
+      values: DEFAULT_VALUES,
       qa: [
         {
           q: "Warum kandidierst du auf dieser Liste – und warum gerade jetzt?",
@@ -243,20 +277,11 @@
       ]
     },
 
-    // Platzhalter für 2–12 (damit es klickbar ist)
-    "2": { no:2, name:"Andreas Brockhaus", area:"H · HRW", img:"assets/img/kandidaten/02-andreas-brockhaus.jpg", alt:"Foto von Andreas Brockhaus" },
-    "3": { no:3, name:"Bernhard Moritz", area:"H · HSI", img:"assets/img/kandidaten/03-bernhard-moritz.jpg", alt:"Foto von Bernhard Moritz" },
-    "4": { no:4, name:"Marius Lux", area:"HAT · HAT PSRA", img:"assets/img/kandidaten/04-marius-lux.jpg", alt:"Foto von Marius Lux" },
-    "5": { no:5, name:"René Hügen", area:"H · HSI", img:"assets/img/kandidaten/05-rene-huegen.jpg", alt:"Foto von René Hügen" },
-    "6": { no:6, name:"Kevin Becker", area:"HAT · AOE-D/L", img:"assets/img/kandidaten/06-kevin-becker.jpg", alt:"Foto von Kevin Becker" },
-    "7": { no:7, name:"Simone Uslu", area:"HAT · AOE-D/L", img:"assets/img/kandidaten/07-simone-uslu.jpg", alt:"Foto von Simone Uslu" },
-    "8": { no:8, name:"Martin Kusch", area:"HCB · GSU", img:"assets/img/kandidaten/08-martin-kusch.jpg", alt:"Foto von Martin Kusch" },
-    "9": { no:9, name:"Tim Jachertz", area:"HAT · AOE-D/L", img:"assets/img/kandidaten/09-tim-jachertz.jpg", alt:"Foto von Tim Jachertz" },
-    "10": { no:10, name:"Kerstin Kolodziej", area:"H · HSG", img:"assets/img/kandidaten/10-kerstin-kolodziej.jpg", alt:"Foto von Kerstin Kolodziej" },
-    "11": { no:11, name:"Michael Flemm", area:"H · HSI", img:"assets/img/kandidaten/11-michael-flemm.jpg", alt:"Foto von Michael Flemm" },
-    "12": { no:12, name:"Erol Yagan", area:"H · HS", img:"assets/img/kandidaten/12-erol-yagan.jpg", alt:"Foto von Erol Yagan" },
+    // Platzhalter: Du ergänzt hier später nur age/since/qa
+    "2": {}, "3": {}, "4": {}, "5": {}, "6": {}, "7": {}, "8": {}, "9": {}, "10": {}, "11": {}, "12": {}
   };
 
+  // Modal-Elemente
   const modal = document.getElementById("profileModal");
   const imgEl = document.getElementById("profileImg");
   const nameEl = document.getElementById("profileName");
@@ -264,32 +289,54 @@
   const noEl = document.getElementById("profileNo");
   const ageEl = document.getElementById("profileAge");
   const sinceEl = document.getElementById("profileSince");
+  const valuesEl = document.getElementById("profileValues");
   const qaEl = document.getElementById("profileQA");
 
-  function openProfile(id){
-    const p = PROFILES[String(id)];
-    if(!p) return;
+  // Helfer: Basisdaten aus der geklickten Karte lesen (damit du nichts doppelt pflegen musst)
+  function getBaseFromTile(tile){
+    const name = tile.querySelector(".candidate-name")?.textContent?.trim() || "Steckbrief";
+    const area = tile.querySelector(".candidate-area")?.textContent?.trim() || "";
+    const img = tile.querySelector("img")?.getAttribute("src") || "";
+    const alt = tile.querySelector("img")?.getAttribute("alt") || `Foto von ${name}`;
+    const no = tile.querySelector(".candidate-badge")?.textContent?.replace("#","")?.trim() || tile.dataset.id || "";
+    return { name, area, img, alt, no };
+  }
 
-    imgEl.src = p.img || "";
-    imgEl.alt = p.alt || (p.name ? `Foto von ${p.name}` : "Foto");
+  function renderValues(values){
+    const list = (Array.isArray(values) && values.length) ? values : DEFAULT_VALUES;
+    valuesEl.innerHTML = list.map(v => {
+      // kleines Highlight: die "²" in bordeaux (optisch)
+      const pretty = v.replace("²", "<strong>²</strong>");
+      return `<span class="valuechip">${pretty}</span>`;
+    }).join("");
+  }
 
-    nameEl.textContent = p.name || "Steckbrief";
-    areaEl.textContent = p.area || "";
-
-    noEl.textContent = p.no ? `Listenplatz: #${p.no}` : "Listenplatz: —";
-    ageEl.textContent = p.age ? `Alter: ${p.age}` : "Alter: —";
-    sinceEl.textContent = p.since ? `Bei Henkel seit: ${p.since}` : "Bei Henkel seit: —";
-
-    const qa = Array.isArray(p.qa) && p.qa.length ? p.qa : [
-      { q: "Steckbrief", a: "Inhalt folgt." }
-    ];
-
-    qaEl.innerHTML = qa.map(item => `
+  function renderQA(qa){
+    const list = (Array.isArray(qa) && qa.length) ? qa : DEFAULT_QA;
+    qaEl.innerHTML = list.map(item => `
       <div class="qa-item">
         <div class="qa-q">${item.q}</div>
         <div class="qa-a">${item.a}</div>
       </div>
     `).join("");
+  }
+
+  function openProfile(id, tile){
+    const base = getBaseFromTile(tile);
+    const p = PROFILES[String(id)] || {};
+
+    imgEl.src = base.img;
+    imgEl.alt = base.alt;
+
+    nameEl.textContent = base.name;
+    areaEl.textContent = base.area;
+
+    noEl.textContent = `Listenplatz: #${base.no || id}`;
+    ageEl.textContent = p.age ? `Alter: ${p.age}` : "Alter: —";
+    sinceEl.textContent = p.since ? `Bei Henkel seit: ${p.since}` : "Bei Henkel seit: —";
+
+    renderValues(p.values);
+    renderQA(p.qa);
 
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden","false");
@@ -302,20 +349,20 @@
     document.body.style.overflow = "";
   }
 
-  // Klick auf Kandidatenkarten
+  // Klickhandling: Kandidaten öffnen / Modal schließen
   document.addEventListener("click", (e) => {
     const tile = e.target.closest(".candidate-tile");
     if(tile){
-      e.preventDefault(); // weil es <a href="#"> ist
-      openProfile(tile.dataset.id);
+      e.preventDefault();
+      openProfile(tile.dataset.id, tile);
       return;
     }
-    if(e.target && e.target.dataset && e.target.dataset.close){
+    if(e.target?.dataset?.close){
       closeProfile();
     }
   });
 
-  // ESC zum Schließen
+  // ESC schließt
   window.addEventListener("keydown", (e) => {
     if(e.key === "Escape" && modal.classList.contains("is-open")){
       closeProfile();
@@ -324,5 +371,6 @@
 </script>
 </body>
 </html>
+
 
 
