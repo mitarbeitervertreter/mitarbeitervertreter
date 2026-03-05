@@ -207,7 +207,122 @@
     </div>
   </div>
 </div>
-  
+
+  <script>
+  // Steckbrief-Daten (Yvonne vollständig, Rest zunächst Platzhalter)
+  const PROFILES = {
+    "1": {
+      no: 1,
+      name: "Yvonne Jones",
+      area: "H · HGS",
+      img: "assets/img/kandidaten/01-yvonne-jones.jpg",
+      alt: "Foto von Yvonne Jones",
+      age: 47,
+      since: "32 Jahre (im September)",
+      qa: [
+        {
+          q: "Warum kandidierst du auf dieser Liste – und warum gerade jetzt?",
+          a: "Ich kandidiere, weil ich mir einen Betriebsrat wünsche, der sich stärker auf seine eigentliche Aufgabe konzentriert: die Interessen der Kolleginnen und Kollegen zu vertreten. Dafür braucht es gute Zusammenarbeit, klare Haltung und fundiertes Wissen über unsere Mitbestimmungsrechte. Gerade jetzt möchte ich dazu beitragen, diese Grundlagen zu stärken."
+        },
+        {
+          q: "Welche Stärke bringst du in den Betriebsrat ein?",
+          a: "Empathie, Mut, Durchsetzungskraft"
+        },
+        {
+          q: "Wenn du am Ende der Amtszeit sagen könntest „Das hat sich wirklich verbessert“ – was wäre das?",
+          a: "Wenn jeder BR Kandidat gut ausgebildet wäre und wir als Team an einem Strang arbeiten."
+        },
+        {
+          q: "Was ist dir im Umgang mit Kolleginnen und Kollegen besonders wichtig?",
+          a: "Den Kolleginnen und Kollegen das Gefühl zu geben: DU BIST WICHTIG! Das fängt mit Kleinigkeiten an – ein Rückruf oder eine kurze Nachricht: „Hey, ich arbeite noch an deiner Mail, es dauert aber noch etwas – ich melde mich bei dir.“"
+        },
+        {
+          q: "Eine kleine Anekdote über mich / Darüber kann ich lachen:",
+          a: "Über meine Chaosfähigkeit – ich nenne das gern mein kreatives Ordnungssystem."
+        }
+      ]
+    },
+
+    // Platzhalter für 2–12 (damit es klickbar ist)
+    "2": { no:2, name:"Andreas Brockhaus", area:"H · HRW", img:"assets/img/kandidaten/02-andreas-brockhaus.jpg", alt:"Foto von Andreas Brockhaus" },
+    "3": { no:3, name:"Bernhard Moritz", area:"H · HSI", img:"assets/img/kandidaten/03-bernhard-moritz.jpg", alt:"Foto von Bernhard Moritz" },
+    "4": { no:4, name:"Marius Lux", area:"HAT · HAT PSRA", img:"assets/img/kandidaten/04-marius-lux.jpg", alt:"Foto von Marius Lux" },
+    "5": { no:5, name:"René Hügen", area:"H · HSI", img:"assets/img/kandidaten/05-rene-huegen.jpg", alt:"Foto von René Hügen" },
+    "6": { no:6, name:"Kevin Becker", area:"HAT · AOE-D/L", img:"assets/img/kandidaten/06-kevin-becker.jpg", alt:"Foto von Kevin Becker" },
+    "7": { no:7, name:"Simone Uslu", area:"HAT · AOE-D/L", img:"assets/img/kandidaten/07-simone-uslu.jpg", alt:"Foto von Simone Uslu" },
+    "8": { no:8, name:"Martin Kusch", area:"HCB · GSU", img:"assets/img/kandidaten/08-martin-kusch.jpg", alt:"Foto von Martin Kusch" },
+    "9": { no:9, name:"Tim Jachertz", area:"HAT · AOE-D/L", img:"assets/img/kandidaten/09-tim-jachertz.jpg", alt:"Foto von Tim Jachertz" },
+    "10": { no:10, name:"Kerstin Kolodziej", area:"H · HSG", img:"assets/img/kandidaten/10-kerstin-kolodziej.jpg", alt:"Foto von Kerstin Kolodziej" },
+    "11": { no:11, name:"Michael Flemm", area:"H · HSI", img:"assets/img/kandidaten/11-michael-flemm.jpg", alt:"Foto von Michael Flemm" },
+    "12": { no:12, name:"Erol Yagan", area:"H · HS", img:"assets/img/kandidaten/12-erol-yagan.jpg", alt:"Foto von Erol Yagan" },
+  };
+
+  const modal = document.getElementById("profileModal");
+  const imgEl = document.getElementById("profileImg");
+  const nameEl = document.getElementById("profileName");
+  const areaEl = document.getElementById("profileArea");
+  const noEl = document.getElementById("profileNo");
+  const ageEl = document.getElementById("profileAge");
+  const sinceEl = document.getElementById("profileSince");
+  const qaEl = document.getElementById("profileQA");
+
+  function openProfile(id){
+    const p = PROFILES[String(id)];
+    if(!p) return;
+
+    imgEl.src = p.img || "";
+    imgEl.alt = p.alt || (p.name ? `Foto von ${p.name}` : "Foto");
+
+    nameEl.textContent = p.name || "Steckbrief";
+    areaEl.textContent = p.area || "";
+
+    noEl.textContent = p.no ? `Listenplatz: #${p.no}` : "Listenplatz: —";
+    ageEl.textContent = p.age ? `Alter: ${p.age}` : "Alter: —";
+    sinceEl.textContent = p.since ? `Bei Henkel seit: ${p.since}` : "Bei Henkel seit: —";
+
+    const qa = Array.isArray(p.qa) && p.qa.length ? p.qa : [
+      { q: "Steckbrief", a: "Inhalt folgt." }
+    ];
+
+    qaEl.innerHTML = qa.map(item => `
+      <div class="qa-item">
+        <div class="qa-q">${item.q}</div>
+        <div class="qa-a">${item.a}</div>
+      </div>
+    `).join("");
+
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden","false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeProfile(){
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden","true");
+    document.body.style.overflow = "";
+  }
+
+  // Klick auf Kandidatenkarten
+  document.addEventListener("click", (e) => {
+    const tile = e.target.closest(".candidate-tile");
+    if(tile){
+      e.preventDefault(); // weil es <a href="#"> ist
+      openProfile(tile.dataset.id);
+      return;
+    }
+    if(e.target && e.target.dataset && e.target.dataset.close){
+      closeProfile();
+    }
+  });
+
+  // ESC zum Schließen
+  window.addEventListener("keydown", (e) => {
+    if(e.key === "Escape" && modal.classList.contains("is-open")){
+      closeProfile();
+    }
+  });
+</script>
 </body>
 </html>
+
 
