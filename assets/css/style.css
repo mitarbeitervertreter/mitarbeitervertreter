@@ -735,16 +735,17 @@ p{
   margin-top: 10px;
 }
 .valuechip{
-  display:inline-flex;
-  align-items:center;
+  display:flex;
+  flex-wrap:nowrap;
   gap:6px;
-  padding: 6px 10px;
+  padding: 4px 8px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,.22);
   background: rgba(0,0,0,.18);
   color: var(--text);
-  font-weight: 800;
-  letter-spacing: .2px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: .1px;
 }
 .valuechip strong{
   color: var(--bordeaux);
