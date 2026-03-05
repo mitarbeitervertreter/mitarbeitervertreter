@@ -750,3 +750,26 @@ p{
   color: var(--bordeaux);
   font-weight: 900;
 }
+  /* (2) Q&A: bessere Lesbarkeit */
+.qa-item{
+  padding: 12px 0;
+}
+.qa-q{
+  font-weight: 900;
+  letter-spacing: .1px;
+}
+.qa-q::before{
+  content:"";
+  display:inline-block;
+  width:10px;
+  height:10px;
+  border-radius: 3px;
+  margin-right: 8px;
+  background: var(--bordeaux);
+  opacity: .9;
+  transform: translateY(1px);
+}
+.qa-a{
+  margin-left: 18px;
+  color: var(--muted);
+}
