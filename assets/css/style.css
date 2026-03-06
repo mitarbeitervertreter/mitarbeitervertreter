@@ -396,8 +396,10 @@ p{
   width:100%;
   height:100%;
   object-fit: cover;
-  display:block;
+  object-position: center 15%;
+  transition: transform .18s ease;
 }
+
 .candidate-name{
   font-weight: 800;
   margin-top:10px;
@@ -545,10 +547,11 @@ p{
   border: 1px solid var(--line);
 }
 .candidate-photo img{
-  width:100%;
+ width:100%;
   height:100%;
   object-fit: cover;
-  display:block;
+  object-position: center 15%;
+  transition: transform .18s ease;
 }
 
 /* falls Bild noch fehlt: neutraler Platzhalter */
