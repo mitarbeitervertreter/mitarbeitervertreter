@@ -1,58 +1,23 @@
-<!doctype html>
-<html lang="de">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kleines BR 1×1 – mitarbeitervertreter</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <style>
-    /* kleine Ergänzung nur für diese Seite */
-    details{
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:14px;
-      padding:12px 12px;
-      background: rgba(255,255,255,.03);
-      margin-top:12px;
-    }
-    summary{
-      cursor:pointer;
-      font-weight:900;
-      color:#e9eefc;
-      list-style:none;
-    }
-    summary::-webkit-details-marker{display:none;}
-    .hint{color:#b7c2e3; margin-top:8px;}
-    .chip{
-      display:inline-block;
-      margin-left:8px;
-      font-size:12px;
-      font-weight:800;
-      color:#b7c2e3;
-      border:1px solid rgba(255,255,255,.12);
-      padding:3px 8px;
-      border-radius:999px;
-      vertical-align:middle;
-      background: rgba(255,255,255,.02);
-    }
-  </style>
-</head>
+<!-- HEADER / NAV -->
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">Liste 2 – Die Mitarbeitervertreter</div>
 
-<body>
-  <header>
-    <div class="wrap">
-      <div class="nav">
-        <div class="brand">mitarbeitervertreter</div>
-        <div class="links">
-          <a href="index.html">Start</a>
-          <a href="news.html">News</a>
-          <a href="mission.html">Unsere Mission</a>
-          <a href="br-1x1.html">Kleines BR 1×1</a>
-          <a href="termine.html">Termine</a>
-          <a href="ueber-uns.html">Über uns</a>
-        </div>
+      <div class="links">
+        <a href="index.html" class="active">Start</a>
+        <a href="kandidaten.html">Kandidaten</a>
+        <a href="br-1x1.html">Kleines BR 1×1</a>
+        <a href="news.html">News</a>
+      </div>
+
+      <div class="langswitch">
+        <a class="active" href="index.html">DE</a>
+        <a href="en/index.html">EN</a>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
   <main class="wrap" style="margin-top:18px;">
     <section class="card">
@@ -121,4 +86,5 @@
     document.getElementById('stand').textContent = d.toLocaleDateString('de-DE');
   </script>
 </body>
+
 </html>
