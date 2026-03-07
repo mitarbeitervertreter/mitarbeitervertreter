@@ -40,29 +40,46 @@
     <section class="card" style="margin-top:14px;">
       <h2>Themen</h2>
 
-      <div class="topic">
-  <button class="topic-head">
+  <div class="topic">
+  <button class="topic-head" type="button" aria-expanded="false">
     <span>Aufgaben des Betriebsrats</span>
     <span class="badge">Grundlagen</span>
   </button>
 
   <div class="topic-body">
     <p>
-      Der Betriebsrat ist die gewählte Interessenvertretung der Beschäftigten
-      im Unternehmen. Seine Aufgaben und Rechte sind im
-      Betriebsverfassungsgesetz (BetrVG) geregelt.
+      Der Betriebsrat ist die gewählte Interessenvertretung der Beschäftigten im Unternehmen.
+      Seine Aufgaben und Rechte sind im Betriebsverfassungsgesetz (BetrVG) geregelt.
     </p>
     <p>
-      Er achtet darauf, dass Gesetze, Tarifverträge und Betriebsvereinbarungen
-      eingehalten werden und vertritt die Interessen der Beschäftigten
-      gegenüber dem Arbeitgeber.
+      Er achtet darauf, dass Gesetze, Tarifverträge und Betriebsvereinbarungen im Betrieb
+      eingehalten werden und vertritt die Interessen der Beschäftigten gegenüber dem Arbeitgeber.
+    </p>
+    <p>
+      Dabei geht es zum Beispiel um Arbeitszeiten, personelle Maßnahmen, Gesundheitsschutz,
+      Arbeitssicherheit oder organisatorische Veränderungen im Betrieb.
+    </p>
+    <p>
+      Die Mitbestimmung im Betrieb ist kein Entgegenkommen des Arbeitgebers,
+      sondern ein gesetzlich verankertes Recht der Beschäftigten.
     </p>
   </div>
 </div>
 
 
+      
 
+<script>
+document.querySelectorAll(".topic-head").forEach((button) => {
+  button.addEventListener("click", () => {
+    const topic = button.closest(".topic");
+    const isOpen = topic.classList.contains("open");
 
+    topic.classList.toggle("open");
+    button.setAttribute("aria-expanded", String(!isOpen));
+  });
+});
+</script>
 
       
     </section>
@@ -80,6 +97,7 @@
 </body>
 
 </html>
+
 
 
 
