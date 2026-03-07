@@ -26,9 +26,6 @@ a{
   font-weight:600;
 }
 
-a:hover{
-  text-decoration: underline;
-}
 
 .wrap{
   max-width:1100px;
@@ -47,20 +44,25 @@ header{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
+  gap:16px 20px;
   flex-wrap:wrap;
+  padding:10px 0;
 }
 
 .brand{
+  flex:0 1 auto;
   font-weight:900;
-  font-size:20px;
-  letter-spacing:.5px;
+  font-size:22px;
+  line-height:1.15;
+  letter-spacing:.1px;
 }
 
 .links{
   display:flex;
-  gap:18px;
+  gap:14px 18px;
   flex-wrap:wrap;
+  align-items:center;
+  flex:1 1 auto;
 }
 
 .links a{
@@ -70,8 +72,65 @@ header{
 
 .links a:hover{
   opacity:1;
+  text-decoration:none;
 }
 
+.langswitch{
+  display:flex;
+  gap:8px;
+  margin-left:auto;
+}
+
+.langswitch a{
+  border:1px solid var(--line);
+  padding:6px 10px;
+  border-radius:999px;
+  font-weight:800;
+  background:rgba(255,255,255,.10);
+}
+
+.langswitch a.active{
+  background:var(--bordeaux);
+  border-color:var(--bordeaux);
+  color:#fff;
+}
+
+@media (max-width: 900px){
+  .nav{
+    align-items:flex-start;
+  }
+
+  .brand{
+    flex:1 1 100%;
+  }
+
+  .links{
+    flex:1 1 100%;
+  }
+}
+
+@media (max-width: 640px){
+  .nav{
+    gap:12px;
+  }
+
+  .brand{
+    font-size:18px;
+  }
+
+  .links{
+    gap:10px 14px;
+  }
+
+  .links a{
+    font-size:.95rem;
+  }
+
+  .langswitch a{
+    padding:5px 9px;
+    font-size:.9rem;
+  }
+}
 /* ===== Karten ===== */
 
 .card{
@@ -230,7 +289,7 @@ p{
 }
 
 .hero-side{
-  display: flex;
+  display: block;
 }
 
 .hero-info{
@@ -401,26 +460,6 @@ p{
   font-weight: 800;        /* kräftiger */
 }
 
-/* ===== Sprachumschalter ===== */
-
-.langswitch{
-  display:flex;
-  gap:8px;
-}
-
-.langswitch a{
-  border:1px solid var(--line);
-  padding:6px 10px;
-  border-radius:999px;
-  font-weight:800;
-  background: rgba(255,255,255,.10);
-}
-
-.langswitch a.active{
-  background: var(--bordeaux);
-  border-color: var(--bordeaux);
-  color:white;
-}
 
 /* ===== Footer ===== */
 
@@ -450,7 +489,7 @@ p{
 }
 
 /* Wichtig: damit margin:auto wirkt */
-.card .election{ display: table; } /* Alternative Zentrierung, super stabil */
+
 
 /* "Betriebsratswahl 2026" ohne Badge-Look */
 .election .badge{
