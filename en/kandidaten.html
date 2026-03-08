@@ -188,12 +188,6 @@
 
 </main>
 
-<!-- Footer -->
-<div class="footer">
-  © <span id="year"></span> mitarbeitervertreter · Updated: <span id="stand"></span>
-  · <a href="../impressum.html">Legal Notice</a>
-  · <a href="../datenschutz.html">Privacy Policy</a>
-</div>
 
 
 <!-- Profile Modal -->
@@ -242,7 +236,7 @@
 </div>
 
   
-
+<scipt>
   
 const PROFILES = {
 
@@ -563,6 +557,7 @@ a:"A sentence describes me quite well: 'Make room at the table – Erol is here.
 ]
 },
   };
+  </script>
 
 const modal=document.getElementById("profileModal");
 const imgEl=document.getElementById("profileImg");
@@ -608,10 +603,9 @@ imgEl.src=base.img;
 imgEl.alt=base.alt;
 nameEl.textContent=base.name;
 areaEl.textContent=base.area;
-noEl.textContent=`Listenplatz: #${base.no||id}`;
-ageEl.textContent=p.age?`Alter: ${p.age}`:"Alter: —";
-sinceEl.textContent=p.since?`At Henkel since: ${p.since}`:"At Henkel since: —";
-renderValues(p.values);
+noEl.textContent=`List position: #${base.no||id}`;
+ageEl.textContent=p.age?`Age: ${p.age}`:"Age: —";
+sinceEl.textContent=p.since?`At Henkel since: ${p.since}`:"At Henkel since: —";renderValues(p.values);
 renderQA(p.qa);
 modal.classList.add("is-open");
 modal.setAttribute("aria-hidden","false");
@@ -643,8 +637,17 @@ closeProfile();
 });
 
 document.getElementById("year").textContent=new Date().getFullYear();
-document.getElementById("stand").textContent=new Date().toLocaleDateString("de-DE");
+document.getElementById("stand").textContent=new Date().toLocaleDateString("en-GB");
 </script>
   
 </body>
+</html>
+
+<!-- Footer -->
+<div class="footer">
+  © <span id="year"></span> mitarbeitervertreter · Updated: <span id="stand"></span>
+  · <a href="../impressum.html">Legal Notice</a>
+  · <a href="../datenschutz.html">Privacy Policy</a>
+</div>
+
 </html>
