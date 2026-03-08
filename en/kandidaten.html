@@ -236,7 +236,7 @@
 </div>
 
   
-<scipt>
+<script>
   
 const PROFILES = {
 
@@ -557,7 +557,7 @@ a:"A sentence describes me quite well: 'Make room at the table – Erol is here.
 ]
 },
   };
-  </script>
+  
 
 const modal=document.getElementById("profileModal");
 const imgEl=document.getElementById("profileImg");
@@ -570,10 +570,10 @@ const valuesEl=document.getElementById("profileValues");
 const qaEl=document.getElementById("profileQA");
 
 function getBaseFromTile(tile){
-const name=tile.querySelector(".candidate-name")?.textContent?.trim()||"Steckbrief";
+const name=tile.querySelector(".candidate-name")?.textContent?.trim()||"Profile";
 const area=tile.querySelector(".candidate-area")?.textContent?.trim()||"";
 const img=tile.querySelector("img")?.getAttribute("src")||"";
-const alt=tile.querySelector("img")?.getAttribute("alt")||`Foto von ${name}`;
+const alt=tile.querySelector("img")?.getAttribute("alt")||`Photo of ${name}`;
 const no=tile.querySelector(".candidate-badge")?.textContent?.replace("#","")?.trim()||tile.dataset.id||"";
 return{name,area,img,alt,no};
 }
@@ -649,5 +649,6 @@ document.getElementById("stand").textContent=new Date().toLocaleDateString("en-G
   · <a href="../impressum.html">Legal Notice</a>
   · <a href="../datenschutz.html">Privacy Policy</a>
 </div>
-
+</script>
+</body>
 </html>
