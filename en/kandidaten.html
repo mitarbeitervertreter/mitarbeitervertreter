@@ -188,6 +188,10 @@
 
 </main>
 
+  <!-- TESTKNOPF -->
+<button onclick="document.getElementById('profileModal').classList.add('is-open')">
+TEST MODAL
+</button>
 
 
 <!-- Profile Modal -->
@@ -646,5 +650,17 @@ document.getElementById("stand").textContent = new Date().toLocaleDateString("en
 </div>
 
 </script>
+
+  <script>
+const modal = document.getElementById("profileModal");
+
+document.querySelectorAll(".candidate-tile").forEach(tile=>{
+  tile.addEventListener("click",(e)=>{
+    e.preventDefault();
+    modal.classList.add("is-open");
+  });
+});
+</script>
+
 </body>
 </html>
