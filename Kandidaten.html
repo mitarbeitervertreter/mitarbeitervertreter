@@ -549,9 +549,29 @@ closeProfile();
 }
 });
 
+
+  
 document.getElementById("year").textContent=new Date().getFullYear();
 document.getElementById("stand").textContent=new Date().toLocaleDateString("de-DE");
 </script>
+
   
+<div class="footer">
+    © <span id="year"></span> mitarbeitervertreter · Stand: <span id="stand"></span>
+<a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
+  </div>
+</section>
+
+  </main>
+
+  <script>
+    const d = new Date();
+    document.getElementById('year').textContent = d.getFullYear();
+    document.getElementById('stand').textContent = d.toLocaleDateString('de-DE');
+  </script>
+
 </body>
 </html>
+
+
+
