@@ -26,6 +26,19 @@ a{
   font-weight:600;
 }
 
+/* ===== News ===== */
+.news-questions{
+  margin-top:12px;
+  padding-left:18px;
+}
+
+.news-questions li{
+  margin-bottom:10px;
+  line-height:1.5;
+}
+
+
+
 
 .wrap{
   max-width:1100px;
