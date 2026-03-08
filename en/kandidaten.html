@@ -559,89 +559,87 @@ a:"A sentence describes me quite well: 'Make room at the table – Erol is here.
   };
   
 
-const modal=document.getElementById("profileModal");
-const imgEl=document.getElementById("profileImg");
-const nameEl=document.getElementById("profileName");
-const areaEl=document.getElementById("profileArea");
-const noEl=document.getElementById("profileNo");
-const ageEl=document.getElementById("profileAge");
-const sinceEl=document.getElementById("profileSince");
-const valuesEl=document.getElementById("profileValues");
-const qaEl=document.getElementById("profileQA");
+const modal = document.getElementById("profileModal");
+const imgEl = document.getElementById("profileImg");
+const nameEl = document.getElementById("profileName");
+const areaEl = document.getElementById("profileArea");
+const noEl = document.getElementById("profileNo");
+const ageEl = document.getElementById("profileAge");
+const sinceEl = document.getElementById("profileSince");
+const valuesEl = document.getElementById("profileValues");
+const qaEl = document.getElementById("profileQA");
 
 function getBaseFromTile(tile){
-const name=tile.querySelector(".candidate-name")?.textContent?.trim()||"Profile";
-const area=tile.querySelector(".candidate-area")?.textContent?.trim()||"";
-const img=tile.querySelector("img")?.getAttribute("src")||"";
-const alt=tile.querySelector("img")?.getAttribute("alt")||`Photo of ${name}`;
-const no=tile.querySelector(".candidate-badge")?.textContent?.replace("#","")?.trim()||tile.dataset.id||"";
-return{name,area,img,alt,no};
+  const name = tile.querySelector(".candidate-name")?.textContent?.trim() || "Profile";
+  const area = tile.querySelector(".candidate-area")?.textContent?.trim() || "";
+  const img = tile.querySelector("img")?.getAttribute("src") || "";
+  const alt = tile.querySelector("img")?.getAttribute("alt") || `Photo of ${name}`;
+  const no = tile.querySelector(".candidate-badge")?.textContent?.replace("#","")?.trim() || tile.dataset.id || "";
+  return { name, area, img, alt, no };
 }
 
 function renderValues(values){
-const list=(Array.isArray(values)&&values.length)?values:DEFAULT_VALUES;
-valuesEl.innerHTML=list.map(v=>{
-const pretty=v.replace("²","<strong>²</strong>");
-return `<span class="valuechip">${pretty}</span>`;
-}).join("");
+  const list = (Array.isArray(values) && values.length) ? values : DEFAULT_VALUES;
+  valuesEl.innerHTML = list.map(v => `<span class="valuechip">${v}</span>`).join("");
 }
 
 function renderQA(qa){
-const list=(Array.isArray(qa)&&qa.length)?qa:DEFAULT_QA;
-qaEl.innerHTML=list.map(item=>`
-<div class="qa-item">
-<div class="qa-q">${item.q}</div>
-<div class="qa-a">${item.a}</div>
-</div>
-`).join("");
+  const list = (Array.isArray(qa) && qa.length) ? qa : DEFAULT_QA;
+  qaEl.innerHTML = list.map(item => `
+    <div class="qa-item">
+      <div class="qa-q">${item.q}</div>
+      <div class="qa-a">${item.a}</div>
+    </div>
+  `).join("");
 }
 
-function openProfile(id,tile){
-const base=getBaseFromTile(tile);
-const p=PROFILES[String(id)]||{};
-imgEl.src=base.img;
-imgEl.alt=base.alt;
-nameEl.textContent=base.name;
-areaEl.textContent=base.area;
-noEl.textContent=`List position: #${base.no||id}`;
-ageEl.textContent=p.age?`Age: ${p.age}`:"Age: —";
-sinceEl.textContent=p.since?`At Henkel since: ${p.since}`:"At Henkel since: —";renderValues(p.values);
-renderQA(p.qa);
-modal.classList.add("is-open");
-modal.setAttribute("aria-hidden","false");
-document.body.style.overflow="hidden";
+function openProfile(id, tile){
+  const base = getBaseFromTile(tile);
+  const p = PROFILES[String(id)] || {};
+
+  imgEl.src = base.img;
+  imgEl.alt = base.alt;
+  nameEl.textContent = base.name;
+  areaEl.textContent = base.area;
+  noEl.textContent = `List position: #${base.no || id}`;
+  ageEl.textContent = p.age ? `Age: ${p.age}` : "Age: —";
+  sinceEl.textContent = p.since ? `At Henkel since: ${p.since}` : "At Henkel since: —";
+
+  renderValues(p.values);
+  renderQA(p.qa);
+
+  modal.classList.add("is-open");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
 }
 
 function closeProfile(){
-modal.classList.remove("is-open");
-modal.setAttribute("aria-hidden","true");
-document.body.style.overflow="";
+  modal.classList.remove("is-open");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
 }
 
-document.addEventListener("click",(e)=>{
-const tile=e.target.closest(".candidate-tile");
-if(tile){
-e.preventDefault();
-openProfile(tile.dataset.id,tile);
-return;
-}
-if(e.target?.dataset?.close){
-closeProfile();
-}
+document.querySelectorAll(".candidate-tile").forEach((tile) => {
+  tile.addEventListener("click", (e) => {
+    e.preventDefault();
+    openProfile(tile.dataset.id, tile);
+  });
 });
 
-window.addEventListener("keydown",(e)=>{
-if(e.key==="Escape"&&modal.classList.contains("is-open")){
-closeProfile();
-}
+document.querySelectorAll("[data-close='1']").forEach((el) => {
+  el.addEventListener("click", closeProfile);
 });
 
-document.getElementById("year").textContent=new Date().getFullYear();
-document.getElementById("stand").textContent=new Date().toLocaleDateString("en-GB");
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && modal.classList.contains("is-open")) {
+    closeProfile();
+  }
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("stand").textContent = new Date().toLocaleDateString("en-GB");
 </script>
   
-</body>
-</html>
 
 <!-- Footer -->
 <div class="footer">
@@ -649,6 +647,7 @@ document.getElementById("stand").textContent=new Date().toLocaleDateString("en-G
   · <a href="../impressum.html">Legal Notice</a>
   · <a href="../datenschutz.html">Privacy Policy</a>
 </div>
+
 </script>
 </body>
 </html>
