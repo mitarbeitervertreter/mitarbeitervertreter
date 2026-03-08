@@ -619,18 +619,15 @@ function closeProfile(){
   document.body.style.overflow = "";
 }
 
-document.querySelectorAll(".candidate-tile").forEach((tile) => {
-  tile.addEventListener("click", (e) => {
+/* TESTVERSION */
+document.querySelectorAll(".candidate-tile").forEach(tile=>{
+  tile.addEventListener("click",(e)=>{
     e.preventDefault();
-    openProfile(tile.dataset.id, tile);
+    document.getElementById("profileModal").classList.add("is-open");
   });
 });
-
-document.querySelectorAll("[data-close='1']").forEach((el) => {
-  el.addEventListener("click", closeProfile);
-});
-
-window.addEventListener("keydown", (e) => {
+  
+  window.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && modal.classList.contains("is-open")) {
     closeProfile();
   }
