@@ -217,6 +217,29 @@ header{
   }
 }
 
+/* BR 1x1 – Textformatierung */
+
+.topic-body p{
+  margin:0 0 12px;
+  line-height:1.55;
+}
+
+.topic-body ul{
+  margin:8px 0 16px 18px;
+  padding:0;
+}
+
+.topic-body li{
+  margin:4px 0;
+}
+
+.topic-body h4{
+  margin:18px 0 8px;
+  font-size:15px;
+  font-weight:600;
+  color:var(--accent);
+}
+
 /* ===== Typografie ===== */
 
 h1{
