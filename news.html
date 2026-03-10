@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="de">
 <head>
@@ -16,7 +15,7 @@
       <div class="brand">Liste 2 – Die Mitarbeitervertreter</div>
 
       <div class="links">
-        <a href="index.html" >Start</a>
+        <a href="index.html">Start</a>
         <a href="kandidaten.html">Kandidaten</a>
         <a href="br-1x1.html">Kleines BR 1×1</a>
         <a href="news.html" class="active!">News</a>
@@ -24,87 +23,52 @@
 
       <div class="langswitch">
         <a class="lang-btn active" href="index.html">DE</a>
-<a class="lang-btn" href="en/index.html">EN</a>
+        <a class="lang-btn" href="en/index.html">EN</a>
       </div>
     </div>
   </div>
 </header>
 
-  <main class="wrap" style="margin-top:18px;">
+<main class="wrap" style="margin-top:18px;">
 
-    <section class="card">
-      <h1>News</h1>
-      <p>Hier informieren wir regelmäßig über aktuelle Themen.</p>
-    </section>
+  <section class="card">
+    <h1>News</h1>
+    <p>Hier informieren wir regelmäßig über aktuelle Themen.</p>
+  </section>
 
-    <!-- NEWS EINTRAG 1 -->
+  <!-- NEWS EINTRAG 1 -->
+  <div class="card">
+    <span class="badge">12.03.2026</span>
 
-    <div class="card">
+    <h3>Unser Redebeitrag in der Belegschaftsversammlung</h3>
 
-  <span class="badge">12.03.2026</span>
-
-  <h3>Fragen an die Belegschaftsversammlung</h3>
-
-  <p>
-    Bei der Belegschaftsversammlung möchten wir einige Fragen zur aktuellen
-    Situation im Betriebsrat und zu wichtigen Themen im Betrieb stellen.
-  </p>
-
-  <ul class="news-questions">
-    <li>
-      <strong>Max Mustermann:</strong>
-      Wie stellt der aktuelle Betriebsrat sicher, dass die Belegschaft
-      künftig transparenter über Entscheidungen informiert wird?
-    </li>
-
-    <li>
-      <strong>Anna Beispiel:</strong>
-      Warum wurden bestimmte Themen zuletzt auf Ebene des
-      Gesamtbetriebsrats behandelt, obwohl sie unseren Standort betreffen?
-    </li>
-
-    <li>
-      <strong>Peter Demo:</strong>
-      Welche konkreten Maßnahmen plant der Betriebsrat im Bereich
-      Arbeitszeit und Arbeitsbelastung?
-    </li>
-
-    <li>
-      <strong>Julia Muster:</strong>
-      Wie soll künftig sichergestellt werden, dass Beschäftigte frühzeitig
-      über geplante Veränderungen im Betrieb informiert werden?
-    </li>
-  </ul>
-
-    <!-- NEWS EINTRAG 2 -->
-    <section class="card" style="margin-top:14px;">
-      <div class="badge">12.03.2026</div>
-      <h2>Website ist online</h2>
-      <p>
-        Unsere neue Informationsseite ist gestartet. Hier bündeln wir alle wichtigen Informationen
-        für euch transparent und übersichtlich.
-      </p>
-    </section>
-
-<div class="footer">
-    © <span id="year"></span> mitarbeitervertreter · Stand: <span id="stand"></span>
-<a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
+    <p>
+      lasst euch überraschen - der Beitrag wird morgen hier erscheinen
+    </p>
   </div>
-</section>
 
-  </main>
+  <!-- NEWS EINTRAG 2 -->
+  <section class="card" style="margin-top:14px;">
+    <div class="badge">12.03.2026</div>
+    <h2>Website ist online</h2>
+    <p>
+      Unsere neue Informationsseite ist gestartet. Hier bündeln wir alle wichtigen Informationen
+      für euch transparent und übersichtlich.
+    </p>
+  </section>
 
-  <script>
-    const d = new Date();
-    document.getElementById('year').textContent = d.getFullYear();
-    document.getElementById('stand').textContent = d.toLocaleDateString('de-DE');
-  </script>
+  <div class="footer">
+    © <span id="year"></span> mitarbeitervertreter · Stand: <span id="stand"></span>
+    <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
+  </div>
+
+</main>
+
+<script>
+  const d = new Date();
+  document.getElementById('year').textContent = d.getFullYear();
+  document.getElementById('stand').textContent = d.toLocaleDateString('de-DE');
+</script>
 
 </body>
 </html>
-
-
-
-
-
-
