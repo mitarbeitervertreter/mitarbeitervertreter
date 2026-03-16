@@ -943,14 +943,6 @@ p{
   line-height:1.45;
 }
 .lang-switch{
-
-/* SCHRITT 3: CSS TEST */
-.modal{
-display:none;
-}
-
-.modal.is-open{
-display:block;
 }
 
 .highlight-red {
