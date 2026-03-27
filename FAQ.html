@@ -85,12 +85,19 @@
   </div>
 </main>
   
-  <script>
-    const d = new Date();
-    document.getElementById("year").textContent = d.getFullYear();
-    document.getElementById("stand").textContent = d.toLocaleDateString("de-DE");
-  </script>
+<script>
+  const d = new Date();
+  document.getElementById("year").textContent = d.getFullYear();
+  document.getElementById("stand").textContent = d.toLocaleDateString("de-DE");
 
+  document.querySelectorAll(".topic-head").forEach(button => {
+    button.addEventListener("click", () => {
+      const topic = button.closest(".topic");
+      const isOpen = topic.classList.toggle("open");
+      button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+  });
+</script>
 </body>
 </html>
 
