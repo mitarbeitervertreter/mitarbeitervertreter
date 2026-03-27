@@ -1,1 +1,61 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Liste 2 – Die Mitarbeitervertreter</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER / NAV -->
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">Liste 2 – Die Mitarbeitervertreter</div>
+
+        <div class="links">
+          <a href="index.html" >Start</a>
+          <a href="kandidaten.html">Kandidaten</a>
+          <a href="br-1x1.html">Kleines BR 1×1</a>
+          <a href="FAQ.html"class="active">Eure Fragen</a>
+          <a href="news.html">News</a>
+        </div>
+
+        <div class="langswitch">
+          <a class="lang-btn active" href="index.html">DE</a>
+          <a class="lang-btn" href="en/index.html">EN</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+        <div class="brandline">
+          <div class="brandtag">MUT<sup>2</sup></div>
+          <div class="brandtag">KOMPETENZ<sup>2</sup></div>
+          <div class="brandtag">TEAM<sup>2</sup></div>
+          <div class="brandtag">UNABHÄNGIG<sup>2</sup></div>
+          <div class="brandtag">TRANSPARENZ<sup>2</sup></div>
+        </div>
+      </section>
+
+      <div class="footer">
+        © <span id="year"></span> mitarbeitervertreter · Stand: <span id="stand"></span>
+        <a href="impressum.html">Impressum</a> ·
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const d = new Date();
+    document.getElementById("year").textContent = d.getFullYear();
+    document.getElementById("stand").textContent = d.toLocaleDateString("de-DE");
+  </script>
+
+</body>
+</html>
 
