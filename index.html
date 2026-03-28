@@ -90,8 +90,8 @@
 
 <section class="wrap" style="margin-top:18px;">
   <section class="card countdown-card">
-    <p class="countdown-label">Countdown zur Betriebsratswahl 2026</p>
-    <h2 id="countdown-title">Noch bis zur Wahl</h2>
+  
+    <h2 id="countdown-title">Countdown bis zum Wahlbeginn</h2>
 
     <div class="countdown-grid" id="countdown">
       <div class="countdown-box">
@@ -170,7 +170,7 @@
   document.getElementById("year").textContent = d.getFullYear();
   document.getElementById("stand").textContent = d.toLocaleDateString("de-DE");
 
-  const targetDate = new Date("2026-04-15T08:00:00");
+  const targetDate = new Date("2026-05-06T05:00:00");
 
   function updateCountdown() {
     const now = new Date();
