@@ -956,6 +956,10 @@ p{
 
 .countdown-card{
   text-align:center;
+  border:3px solid var(--bordeaux)
+    box-shadow:0 0 0 1px rgba(122,31,43,.15);
+  border-radius:18px;         
+  
 }
 
 .countdown-card h2{
@@ -973,7 +977,7 @@ p{
 .countdown-box{
   padding:18px 12px;
   border-radius:18px;
-  border:5px solid var(--bordeaux);
+  border:3px solid var(--line);
   background:rgba(255,255,255,.04);
 }
 
