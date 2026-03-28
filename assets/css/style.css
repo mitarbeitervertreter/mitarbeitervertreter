@@ -952,11 +952,9 @@ p{
 
 /* ===== Countdown ===== */
 
-/* ===== Countdown ===== */
-
-.countdown-card{
+card.countdown-card{
   text-align:center;
-  border:3px solid var(--bordeaux)
+  border:2px solid var(--bordeaux);
     box-shadow:0 0 0 1px rgba(122,31,43,.15);
   border-radius:18px;         
   
