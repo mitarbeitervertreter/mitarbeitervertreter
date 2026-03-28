@@ -952,17 +952,17 @@ p{
 
 /* ===== Countdown ===== */
 
-card.countdown-card{
+.card.countdown-card{
   text-align:center;
   border:2px solid var(--bordeaux);
-    box-shadow:0 0 0 1px rgba(122,31,43,.15);
-  border-radius:18px;         
-  
+  box-shadow:0 0 0 1px rgba(122,31,43,.15);
+  border-radius:18px;
 }
 
 .countdown-card h2{
   margin:0 0 18px;
   font-size:32px;
+  text-align:center;
 }
 
 .countdown-grid{
@@ -975,16 +975,18 @@ card.countdown-card{
 .countdown-box{
   padding:18px 12px;
   border-radius:18px;
-  border:3px solid var(--line);
+  border:1px solid var(--line);
   background:rgba(255,255,255,.04);
+  text-align:center;
 }
 
 .countdown-box strong{
   display:block;
-  font-size:clamp(1.6rem, 4vw, 2.2rem);  /*vorher: 2rem, 5vw, 3rem
+  font-size:clamp(1.6rem, 4vw, 2.2rem);
   line-height:1;
-  font-weight:700;                      /*vorher:900
+  font-weight:700;
   color:var(--text);
+  text-align:center;
 }
 
 .countdown-box span{
@@ -993,12 +995,14 @@ card.countdown-card{
   font-size:.95rem;
   color:var(--muted);
   font-weight:700;
+  text-align:center;
 }
 
 .countdown-note{
   margin:18px 0 0;
   font-weight:700;
   color:var(--muted);
+  text-align:center;
 }
 
 @media (max-width: 700px){
