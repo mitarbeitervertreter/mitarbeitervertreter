@@ -954,6 +954,7 @@ p{
 .countdown-card{
   text-align:center;
   padding:18px 18px;           /* vorher ~22 → kompakter */
+ border:1px solid rgba(122,31,43,.6);
 }
 
 .countdown-card h2{
