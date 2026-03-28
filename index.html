@@ -88,6 +88,36 @@
       </div>
     </section>
 
+<section class="wrap" style="margin-top:18px;">
+  <section class="card countdown-card">
+  
+    <h2 id="countdown-title">Countdown bis zum Wahlbeginn</h2>
+
+    <div class="countdown-grid" id="countdown">
+      <div class="countdown-box">
+        <strong id="cd-days">0</strong>
+        <span>Tage</span>
+      </div>
+      <div class="countdown-box">
+        <strong id="cd-hours">0</strong>
+        <span>Stunden</span>
+      </div>
+      <div class="countdown-box">
+        <strong id="cd-minutes">0</strong>
+        <span>Minuten</span>
+      </div>
+      <div class="countdown-box">
+        <strong id="cd-seconds">0</strong>
+        <span>Sekunden</span>
+      </div>
+    </div>
+
+    <p class="countdown-note" id="countdown-note">
+      Jede Stimme zählt.
+    </p>
+  </section>
+</section>
+    
     <!-- START-INHALT -->
     <section class="wrap" style="margin-top:18px;">
       <section class="card" id="programm" style="scroll-margin-top: 140px;">
@@ -136,10 +166,47 @@
   </main>
 
   <script>
-    const d = new Date();
-    document.getElementById("year").textContent = d.getFullYear();
-    document.getElementById("stand").textContent = d.toLocaleDateString("de-DE");
-  </script>
+  const d = new Date();
+  document.getElementById("year").textContent = d.getFullYear();
+  document.getElementById("stand").textContent = d.toLocaleDateString("de-DE");
+
+  const targetDate = new Date("2026-05-06T05:00:00");
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = targetDate - now;
+
+    const daysEl = document.getElementById("cd-days");
+    const hoursEl = document.getElementById("cd-hours");
+    const minutesEl = document.getElementById("cd-minutes");
+    const secondsEl = document.getElementById("cd-seconds");
+    const titleEl = document.getElementById("countdown-title");
+    const noteEl = document.getElementById("countdown-note");
+
+    if (diff <= 0) {
+      daysEl.textContent = "0";
+      hoursEl.textContent = "0";
+      minutesEl.textContent = "0";
+      secondsEl.textContent = "0";
+      titleEl.textContent = "Die Wahl läuft";
+      noteEl.textContent = "Jetzt kommt es auf jede Stimme an.";
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    daysEl.textContent = String(days);
+    hoursEl.textContent = String(hours).padStart(2, "0");
+    minutesEl.textContent = String(minutes).padStart(2, "0");
+    secondsEl.textContent = String(seconds).padStart(2, "0");
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
 
 </body>
 </html>
