@@ -1010,3 +1010,63 @@ p{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+
+/* ===== Downloads ===== */
+
+.links a.active{
+  opacity:1;
+  color:var(--text);
+  text-decoration:underline;
+  text-underline-offset:6px;
+  text-decoration-thickness:2px;
+}
+
+.download-list{
+  display:grid;
+  gap:14px;
+  margin-top:18px;
+}
+
+.download-item{
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:16px;
+  background:rgba(255,255,255,.04);
+}
+
+.download-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.download-item h3{
+  margin:0 0 4px;
+  font-size:20px;
+  line-height:1.2;
+}
+
+.download-meta{
+  font-size:.92rem;
+  color:var(--muted);
+}
+
+.download-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:12px;
+}
+
+@media (max-width: 640px){
+  .download-item{
+    padding:14px;
+  }
+
+  .download-item h3{
+    font-size:18px;
+  }
+}
