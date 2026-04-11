@@ -1128,3 +1128,14 @@ p{
   width:100%;
   text-align:center;
 }
+.download-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:auto;
+}
+
+.download-actions .btn{
+  flex:1 1 0;
+  text-align:center;
+}
