@@ -1,1 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Liste 2 – Downloads</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
 
+<!-- HEADER / NAV -->
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">Liste 2 – Die Mitarbeitervertreter</div>
+
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="kandidaten.html">Candidates</a>
+        <a href="FAQ.html">You asked</a>
+        <a href="br-1x1.html">Works Council Guide</a>
+        <a href="news.html">News</a>
+        <a href="downloads.html" class="active">Downloads</a>
+      </div>
+
+      <div class="langswitch">
+        <a class="lang-btn" href="../downloads.html">DE</a>
+        <a class="lang-btn active" href="downloads.html">EN</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero hero-statement">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hero-kicker">
+          <span class="hero-kicker-dot"></span>
+          Liste 2 · Materials & Information
+        </div>
+
+        <h1 class="hero-title">
+          <span>OUR</span>
+          <span>DOWNLOADS</span>
+        </h1>
+
+        <p class="hero-text">
+          Here you will find our flyers, overviews and further information
+          about Liste 2 – Die Mitarbeitervertreter.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn" href="#downloads">View downloads</a>
+          <a class="btn btn-outline" href="kandidaten.html">Candidates</a>
+        </div>
+      </div>
+
+      <aside class="card hero-info">
+        <p class="hero-info-label">Download Area</p>
+
+        <h2 class="hero-info-title">
+          EVERYTHING<br>
+          IMPORTANT<br>
+          AT A GLANCE.
+        </h2>
+
+        <div class="hero-facts">
+          <div class="hero-fact">
+            <span>Content</span>
+            <strong>Flyers, info, documents</strong>
+          </div>
+
+          <div class="hero-fact">
+            <span>Format</span>
+            <strong>PDF downloads</strong>
+          </div>
+
+          <div class="hero-fact">
+            <span>Updates</span>
+            <strong>ongoing</strong>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- DOWNLOADS -->
+  <section class="wrap" style="margin-top:18px;">
+    <section class="card" id="downloads" style="scroll-margin-top: 140px;">
+      <h2>Downloads</h2>
+
+      <p>
+        All relevant materials are available here for you to download.
+      </p>
+
+      <div class="download-list">
+
+        <div class="download-item">
+          <div class="download-top">
+            <div>
+              <h3>Liste 2 Flyer</h3>
+              <div class="download-meta">PDF · Updated: April 2026</div>
+            </div>
+            <span class="badge">Flyer</span>
+          </div>
+
+          <p>
+            Short overview of our goals, topics and candidates.
+          </p>
+
+          <div class="download-actions">
+            <a class="btn primary" href="../assets/downloads/flyer-liste2.pdf" download>Download</a>
+          </div>
+        </div>
+
+        <div class="download-item">
+          <div class="download-top">
+            <div>
+              <h3>Candidate Overview</h3>
+              <div class="download-meta">PDF · Updated: April 2026</div>
+            </div>
+            <span class="badge">Candidates</span>
+          </div>
+
+          <p>
+            All candidates in a compact overview.
+          </p>
+
+          <div class="download-actions">
+            <a class="btn primary" href="../assets/downloads/kandidatenuebersicht.pdf" download>Download</a>
+          </div>
+        </div>
+
+        <div class="download-item">
+          <div class="download-top">
+            <div>
+              <h3>Election FAQ</h3>
+              <div class="download-meta">PDF · Updated: April 2026</div>
+            </div>
+            <span class="badge">FAQ</span>
+          </div>
+
+          <p>
+            Answers to frequently asked questions about the works council election.
+          </p>
+
+          <div class="download-actions">
+            <a class="btn primary" href="../assets/downloads/faq-betriebsratswahl.pdf" download>Download</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="footer">
+      © <span id="year"></span> mitarbeitervertreter · Updated: <span id="stand"></span> ·
+      <a href="impressum.html">Legal Notice</a> ·
+      <a href="datenschutz.html">Privacy Policy</a>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  const d = new Date();
+  document.getElementById("year").textContent = d.getFullYear();
+  document.getElementById("stand").textContent = d.toLocaleDateString("en-GB");
+</script>
+
+</body>
+</html>
