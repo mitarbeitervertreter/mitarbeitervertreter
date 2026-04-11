@@ -1,1 +1,125 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Liste 2 – Die Mitarbeitervertreter | Downloads</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
 
+  <!-- HEADER / NAV -->
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">Liste 2 – Die Mitarbeitervertreter</div>
+
+        <div class="links">
+          <a href="index.html">Start</a>
+          <a href="kandidaten.html">Kandidaten</a>
+          <a href="FAQ.html">Eure Fragen</a>
+          <a href="br-1x1.html">Kleines BR 1×1</a>
+          <a href="news.html">News</a>
+          <a href="downloads.html" class="active">Downloads</a>
+        </div>
+
+        <div class="langswitch">
+          <a class="lang-btn active" href="downloads.html">DE</a>
+          <a class="lang-btn" href="en/downloads.html">EN</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- SEITENKOPF -->
+    <section class="wrap" style="padding: 18px 0 8px;">
+      <div class="card">
+        <span class="badge">Materialien & Infos</span>
+        <h1 style="margin: 10px 0 8px;">Downloads</h1>
+        <p>
+          Hier findet ihr Flyer, Plakate, Präsentationen und weitere Unterlagen
+          rund um Liste 2 – Die Mitarbeitervertreter.
+        </p>
+      </div>
+    </section>
+
+    <!-- DOWNLOADS -->
+    <section class="wrap" style="padding-bottom: 18px;">
+      <div class="download-grid">
+
+        <article class="download-card">
+  <div class="download-meta">PDF · One-Pager · Stand: April 2026</div>
+  <h3>One-Pager Liste 2</h3>
+  <p>
+    Kurze Übersicht zur Listenwahl und zu den zentralen Zielen von Liste 2.
+    Das Dokument zeigt, warum jede Stimme Einfluss auf die Mehrheiten im
+    Gremium hat und wofür wir als Team antreten.
+  </p>
+  <div class="download-actions">
+    <a class="btn" href="assets/downloads/DE- One-Pager Liste 2.pdf" target="_blank" rel="noopener">
+      Vorschau
+    </a>
+    <a class="btn primary" href="assets/downloads/DE- One-Pager Liste 2.pdf" download>
+      Download
+    </a>
+  </div>
+</article>
+
+        <article class="download-card">
+          <div class="download-meta">PDF · Flyer · Stand: April 2026</div>
+  <h3>Flyer Liste 2 (A4)</h3>
+  <p>
+    Unser Team auf einen Blick: alle Kandidatinnen und Kandidaten,
+    unsere Werte und unsere Botschaft zur Betriebsratswahl –
+    gemeinsam, miteinander, für euch.
+  </p>
+   <div class="download-actions">
+    <a class="btn" href="assets/downloads/Flyer_A4.pdf" target="_blank" rel="noopener">
+      Vorschau
+    </a>
+    <a class="btn primary" href="assets/downloads/Flyer_A4.pdf" download>
+      Download
+    </a>
+  </div>
+</article>
+          
+  
+       <article class="download-card">
+  <div class="download-meta">PDF · Aushang · Stand: April 2026</div>
+  <h3>Aushang Liste 2 (A4)</h3>
+  <p>
+    Plakat zur Betriebsratswahl mit unserer zentralen Botschaft und
+    allen Kandidatinnen und Kandidaten auf einen Blick.
+  </p>
+  <div class="download-actions">
+    <a class="btn" href="assets/downloads/Aushang_A4.pdf" target="_blank" rel="noopener">
+      Vorschau
+    </a>
+    <a class="btn primary" href="assets/downloads/Aushang_A4.pdf" download>
+      Download
+    </a>
+  </div>
+</article>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="footer">
+        © <span id="year"></span> mitarbeitervertreter · Stand: <span id="stand"></span> ·
+        <a href="impressum.html">Impressum</a> ·
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const d = new Date();
+    document.getElementById("year").textContent = d.getFullYear();
+    document.getElementById("stand").textContent = d.toLocaleDateString("de-DE");
+  </script>
+
+</body>
+</html>

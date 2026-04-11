@@ -1,1 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Liste 2 – Downloads</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
 
+  <!-- HEADER / NAV -->
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">Liste 2 – Die Mitarbeitervertreter</div>
+
+        <div class="links">
+          <a href="index.html">Home</a>
+          <a href="kandidaten.html">Candidates</a>
+          <a href="FAQ.html">You asked</a>
+          <a href="br-1x1.html">Works Council Guide</a>
+          <a href="news.html">News</a>
+          <a href="downloads.html" class="active">Downloads</a>
+        </div>
+
+        <div class="langswitch">
+          <a class="lang-btn" href="../downloads.html">DE</a>
+          <a class="lang-btn active" href="downloads.html">EN</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PAGE HEADER -->
+    <section class="wrap" style="padding: 18px 0 8px;">
+      <div class="card">
+        <span class="badge">Materials & Information</span>
+        <h1 style="margin: 10px 0 8px;">Downloads</h1>
+        <p>
+          Here you can find flyers, posters, presentations and further materials
+          related to Liste 2 – Die Mitarbeitervertreter.
+        </p>
+      </div>
+    </section>
+
+   <!-- DOWNLOADS -->
+<section class="wrap" style="padding-bottom: 18px;">
+  <div class="download-grid">
+
+    <article class="download-card">
+  <div class="download-meta">PDF · One-Pager · Updated: April 2026</div>
+  <h3>One-Pager Liste 2</h3>
+  <p>
+    Short overview of the list-based election and the key goals of Liste 2.
+    The document explains why every vote influences the majority in the
+    committee and what we stand for as a team.
+  </p>
+  <div class="download-actions">
+    <a class="btn" href="../assets/downloads/EN - One-Pager Liste 2.pdf" target="_blank" rel="noopener">
+      Preview
+    </a>
+    <a class="btn primary" href="../assets/downloads/EN - One-Pager Liste 2.pdf" download>
+      Download
+    </a>
+  </div>
+</article>
+
+    <article class="download-card">
+      <div class="download-meta">PDF · Flyer · Updated: April 2026</div>
+      <h3>Liste 2 Flyer (A4)</h3>
+      <p>
+        Our team at a glance: all candidates, our values and our message
+        for the works council election – together, with each other, for you.
+      </p>
+ <div class="download-actions">
+    <a class="btn" href="../assets/downloads/Flyer_A4.pdf" target="_blank" rel="noopener">
+      Preview
+    </a>
+    <a class="btn primary" href="../assets/downloads/Flyer_A4.pdf" download>
+      Download
+    </a>
+    </article>
+
+    <article class="download-card">
+      <div class="download-meta">PDF · Poster · Updated: April 2026</div>
+      <h3>Liste 2 Poster (A4)</h3>
+      <p>
+        Campaign poster for the works council election featuring our core message
+        and an overview of all candidates.
+      </p>
+ <div class="download-actions">
+    <a class="btn" href="../assets/downloads/Aushang_A4.pdf" target="_blank" rel="noopener">
+      Preview
+    </a>
+    <a class="btn primary" href="../assets/downloads/Aushang_A4.pdf" download>
+      Download
+    </a>
+    </article>
+  </div>
+</section>
+  
+
+    <section class="wrap">
+      <div class="footer">
+        © <span id="year"></span> mitarbeitervertreter · Updated: <span id="stand"></span> ·
+        <a href="impressum.html">Legal Notice</a> ·
+        <a href="datenschutz.html">Privacy Policy</a>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const d = new Date();
+    document.getElementById("year").textContent = d.getFullYear();
+    document.getElementById("stand").textContent = d.toLocaleDateString("en-GB");
+  </script>
+
+</body>
+</html>
