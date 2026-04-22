@@ -1415,61 +1415,73 @@ p{
   }
 }
 
-/* ===== Popup Content Struktur ===== */
+/* ===== Popup High-End Cards ===== */
 
 .site-popup-content{
-  margin-top: 22px;
-}
-
-.popup-item{
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 16px 0;
-  border-top: 1px solid rgba(255,255,255,.14);
-}
-
-.popup-icon{
-  width: 42px;
-  height: 42px;
-  flex: 0 0 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  background: rgba(255,255,255,.10);
-  font-size: 20px;
-  line-height: 1;
-}
-
-.popup-copy{
+  margin-top: 18px;
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  min-width: 0;
+  gap: 12px;
 }
 
-.popup-copy strong{
+/* einzelne „Karten“ */
+.popup-card{
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.10);
+  position: relative;
+  transition: .2s ease;
+}
+
+/* subtiler Hover (Desktop) */
+.popup-card:hover{
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.18);
+}
+
+/* linke Akzentlinie */
+.popup-card::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--bordeaux);
+  opacity: .85;
+}
+
+/* Titel */
+.popup-card strong{
   display: block;
-  font-size: 1.02rem;
-  line-height: 1.3;
+  font-size: 1.03rem;
   font-weight: 800;
+  line-height: 1.3;
   color: var(--text);
 }
 
-.popup-copy span{
+/* Beschreibung */
+.popup-card span{
   display: block;
-  font-size: 0.96rem;
+  margin-top: 4px;
+  font-size: 0.95rem;
   line-height: 1.45;
-  color: rgba(255,255,255,.82);
+  color: rgba(255,255,255,.78);
 }
 
+/* Trennlinie vor Footer */
+.popup-divider{
+  height: 1px;
+  background: rgba(255,255,255,.18);
+  margin-top: 6px;
+}
+
+/* Footer näher ran */
 .popup-footer{
-  margin: 18px 0 0;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255,255,255,.18);
-  font-size: 1rem;
-  line-height: 1.5;
-  font-weight: 700;
-  color: rgba(255,255,255,.88);
+  margin: 10px 0 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(255,255,255,.85);
 }
