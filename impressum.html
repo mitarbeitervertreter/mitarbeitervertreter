@@ -9,6 +9,23 @@
 
 <body>
 
+  <div class="site-popup" id="sitePopup" aria-hidden="true">
+  <div class="site-popup-backdrop"></div>
+
+  <div class="site-popup-box" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+    <button class="site-popup-close" id="popupClose" aria-label="Hinweis schließen">×</button>
+
+    <p class="site-popup-kicker">Hinweis in eigener Sache</p>
+    <h2 class="site-popup-title" id="popupTitle">Warum erst jetzt Flyer?</h2>
+
+    <p class="site-popup-text">
+      Wir sind selbstfinanziert und nicht gewerkschaftlich getragen.
+      Deshalb entstehen unsere Materialien mit privatem Einsatz statt aus Mitgliedsbeiträgen.
+      Für uns zählen Herz, Engagement und ehrliche Information mehr als Give-Aways.
+    </p>
+  </div>
+</div>
+
 <header>
   <div class="wrap">
     <div class="nav">
@@ -55,5 +72,37 @@ künstlicher Intelligenz (KI) erstellt.
 
 </main>
 
+<script>
+  (function () {
+    const popup = document.getElementById("sitePopup");
+    const closeBtn = document.getElementById("popupClose");
+
+    if (!popup || !closeBtn) return;
+
+    const popupAlreadySeen = localStorage.getItem("sitePopupSeen");
+
+    if (!popupAlreadySeen) {
+      popup.classList.add("is-visible");
+      popup.setAttribute("aria-hidden", "false");
+    }
+
+    function closePopup() {
+      popup.classList.remove("is-visible");
+      popup.setAttribute("aria-hidden", "true");
+      localStorage.setItem("sitePopupSeen", "true");
+    }
+
+    closeBtn.addEventListener("click", closePopup);
+
+    popup.addEventListener("click", function (e) {
+      if (e.target.classList.contains("site-popup-backdrop")) {
+        closePopup();
+      }
+    });
+  })();
+</script>
+
+
+  
 </body>
 </html>
