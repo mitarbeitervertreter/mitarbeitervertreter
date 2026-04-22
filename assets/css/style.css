@@ -1283,8 +1283,8 @@ p{
 .site-popup-backdrop{
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,.45);
-  backdrop-filter: blur(3px);
+  background: rgba(0,0,0,.32);
+  backdrop-filter: blur(2px);
 }
 
 .site-popup-box{
@@ -1413,4 +1413,56 @@ p{
     opacity: 1;
     transform: none;
   }
+}
+
+/* ===== Popup Content Struktur ===== */
+
+.site-popup-content{
+  margin-top: 14px;
+}
+
+.popup-item{
+  display: flex;
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+
+.popup-item:first-child{
+  border-top: 1px solid rgba(255,255,255,.18);
+}
+
+.popup-icon{
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(255,255,255,.12);
+  font-size: 16px;
+}
+
+.popup-item strong{
+  display: block;
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.popup-item span{
+  display: block;
+  font-size: 0.92rem;
+  color: rgba(255,255,255,.75);
+  margin-top: 2px;
+}
+
+.popup-footer{
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,.18);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: rgba(255,255,255,.85);
 }
