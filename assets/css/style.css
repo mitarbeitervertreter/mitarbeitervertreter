@@ -1593,8 +1593,8 @@ p{
 }
 
 .site-popup .popup-icon-svg{
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
   display: block;
 }
 
@@ -1633,6 +1633,8 @@ p{
   .site-popup .popup-card-icon-wrap{
     width: 42px;
     height: 42px;
+     background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.10);
   }
 
   .site-popup .popup-icon-svg{
