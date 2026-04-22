@@ -236,15 +236,49 @@
 </script>
 
 <script>
-  (function () {
-    const popup = document.getElementById("sitePopup");
-    const closeBtn = document.getElementById("popupClose");
+  const d = new Date();
+  document.getElementById("year").textContent = d.getFullYear();
+  document.getElementById("stand").textContent = d.toLocaleDateString("de-DE");
 
-    if (!popup || !closeBtn) return;
+  const targetDate = new Date("2026-05-06T05:00:00");
 
-    const popupAlreadySeen = localStorage.getItem("sitePopupSeen");
+  function updateCountdown() {
+    const now = new Date();
+    const diff = targetDate - now;
 
-    <script>
+    const daysEl = document.getElementById("cd-days");
+    const hoursEl = document.getElementById("cd-hours");
+    const minutesEl = document.getElementById("cd-minutes");
+    const secondsEl = document.getElementById("cd-seconds");
+    const titleEl = document.getElementById("countdown-title");
+    const noteEl = document.getElementById("countdown-note");
+
+    if (diff <= 0) {
+      daysEl.textContent = "0";
+      hoursEl.textContent = "0";
+      minutesEl.textContent = "0";
+      secondsEl.textContent = "0";
+      titleEl.textContent = "Die Wahl läuft";
+      noteEl.textContent = "Jetzt kommt es auf jede Stimme an.";
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    daysEl.textContent = String(days);
+    hoursEl.textContent = String(hours).padStart(2, "0");
+    minutesEl.textContent = String(minutes).padStart(2, "0");
+    secondsEl.textContent = String(seconds).padStart(2, "0");
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+
+<script>
   (function () {
     const popup = document.getElementById("sitePopup");
     const closeBtn = document.getElementById("popupClose");
