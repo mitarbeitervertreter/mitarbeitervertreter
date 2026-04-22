@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<div class="site-popup" id="sitePopup" aria-hidden="true">
+<div class="site-popup is-visible" id="sitePopup" aria-hidden="false">
   <div class="site-popup-backdrop"></div>
 
   <div class="site-popup-box" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
@@ -17,13 +17,33 @@
     <p class="site-popup-kicker">Hinweis in eigener Sache</p>
     <h2 class="site-popup-title" id="popupTitle">Warum erst jetzt Flyer?</h2>
 
-    <p class="site-popup-text">
-      Wir sind selbstfinanziert – nicht gewerkschaftlich getragen.
-      Deshalb investieren wir unser eigenes Geld in ehrliche Information statt in Give-Aways.
-    </p>
+ <div class="site-popup-content">
+
+  <div class="popup-card">
+    <strong>Wir sind selbstfinanziert</strong>
+    <span>Nicht gewerkschaftlich getragen.</span>
   </div>
+
+  <div class="popup-card">
+    <strong>Unser Einsatz kommt aus Überzeugung</strong>
+    <span>Wir investieren unser eigenes Geld.</span>
+  </div>
+
+  <div class="popup-card">
+    <strong>Für ehrliche Information</strong>
+    <span>Statt für Give-Aways und Werbeartikel.</span>
+  </div>
+
+  <div class="popup-divider"></div>
+
+  <p class="popup-footer">
+    Herz, Engagement & Transparenz zählen mehr.
+  </p>
+
 </div>
-  
+</div>
+</div>
+    
   <!-- HEADER / NAV -->
   <header>
     <div class="wrap">
@@ -303,8 +323,7 @@
       }
     });
   })();
-</script>
-  
+</script>  
 </body>
 </html>
 
