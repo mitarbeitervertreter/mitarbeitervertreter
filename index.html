@@ -246,8 +246,10 @@
     const popupAlreadySeen = localStorage.getItem("sitePopupSeen");
 
     if (!popupAlreadySeen) {
+      setTimeout(() => {
       popup.classList.add("is-visible");
       popup.setAttribute("aria-hidden", "false");
+        }, 220);
     }
 
     function closePopup() {
