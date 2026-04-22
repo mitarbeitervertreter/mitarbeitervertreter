@@ -18,9 +18,8 @@
     <h2 class="site-popup-title" id="popupTitle">Warum erst jetzt Flyer?</h2>
 
     <p class="site-popup-text">
-      Wir sind selbstfinanziert und nicht gewerkschaftlich getragen.
-      Deshalb entstehen unsere Materialien mit privatem Einsatz statt aus Mitgliedsbeiträgen.
-      Für uns zählen Herz, Engagement und ehrliche Information mehr als Give-Aways.
+      Wir sind selbstfinanziert – nicht gewerkschaftlich getragen.
+      Deshalb investieren wir unser eigenes Geld in ehrliche Information statt in Give-Aways.
     </p>
   </div>
 </div>
@@ -245,17 +244,21 @@
 
     const popupAlreadySeen = localStorage.getItem("sitePopupSeen");
 
-    if (!popupAlreadySeen) {
-      setTimeout(() => {
+    <script>
+  (function () {
+    const popup = document.getElementById("sitePopup");
+    const closeBtn = document.getElementById("popupClose");
+
+    if (!popup || !closeBtn) return;
+
+    setTimeout(() => {
       popup.classList.add("is-visible");
       popup.setAttribute("aria-hidden", "false");
-        }, 220);
-    }
+    }, 220);
 
     function closePopup() {
       popup.classList.remove("is-visible");
       popup.setAttribute("aria-hidden", "true");
-      localStorage.setItem("sitePopupSeen", "true");
     }
 
     closeBtn.addEventListener("click", closePopup);
