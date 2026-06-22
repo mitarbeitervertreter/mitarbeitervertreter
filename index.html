@@ -69,7 +69,66 @@
   </div>
   </div>
 </div>
-    
+
+<div class="site-popup" id="newsletterPopup" aria-hidden="true">
+
+  <div class="site-popup-backdrop"></div>
+
+  <div class="site-popup-box" role="dialog" aria-modal="true">
+
+    <button class="site-popup-close" id="newsletterClose" aria-label="Fenster schließen">
+      ×
+    </button>
+
+    <p class="site-popup-kicker">
+      Newsletter
+    </p>
+
+    <h2 class="site-popup-title" style="text-align:center;">
+      Newsletter der Mitarbeitervertreter
+    </h2>
+
+    <div class="site-popup-content">
+
+      <p style="line-height:1.7;">
+        Wir möchten euch regelmäßig über aktuelle Themen,
+        Neuigkeiten und Entwicklungen rund um den Betriebsrat informieren.
+      </p>
+
+      <p style="line-height:1.7;">
+        Wenn ihr unseren Newsletter erhalten möchtet,
+        sendet uns bitte eine kurze Anmeldung per E-Mail.
+      </p>
+
+      <div class="popup-divider"></div>
+
+      <p style="line-height:1.7;">
+        Bitte gebt folgende Informationen an:
+      </p>
+
+      <ul>
+        <li>Vorname</li>
+        <li>Nachname</li>
+        <li>E-Mail-Adresse</li>
+      </ul>
+
+      <a 
+        class="btn primary"
+        href="mailto:mitarbeitervertreter@gmx.de?subject=Newsletter%20Anmeldung&body=Hallo%20Mitarbeitervertreter%2C%0A%0Aich%20möchte%20den%20Newsletter%20erhalten.%0A%0AVorname%3A%0A%0ANachname%3A%0A%0AE-Mail-Adresse%3A%0A%0AViele%20Grüße"
+      >
+        Newsletter per E-Mail anmelden
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+  
   <!-- HEADER / NAV -->
   <header>
     <div class="wrap">
@@ -102,7 +161,7 @@
     <div class="hero-copy">
       <div class="hero-kicker">
         <span class="hero-kicker-dot"></span>
-        Betriebsratswahl 2026 · Liste 2
+        DEIN Betriebsrats · Liste 2
       </div>
 
       <h1 class="hero-title">
@@ -317,6 +376,34 @@
       }
     });
   })();
+
+  (function () {
+
+  const popup = document.getElementById("newsletterPopup");
+  const open = document.getElementById("newsletterOpen");
+  const close = document.getElementById("newsletterClose");
+
+  if (!popup || !open || !close) return;
+
+  open.addEventListener("click", function(e){
+    e.preventDefault();
+    popup.classList.add("is-visible");
+    popup.setAttribute("aria-hidden", "false");
+  });
+
+  close.addEventListener("click", function(){
+    popup.classList.remove("is-visible");
+    popup.setAttribute("aria-hidden", "true");
+  });
+
+  popup.addEventListener("click", function(e){
+    if(e.target.classList.contains("site-popup-backdrop")){
+      popup.classList.remove("is-visible");
+      popup.setAttribute("aria-hidden", "true");
+    }
+  });
+
+})();
 </script>  
 </body>
 </html>
