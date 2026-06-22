@@ -272,49 +272,7 @@
 
   </main>
 
-  <script>
-  const d = new Date();
-  document.getElementById("year").textContent = d.getFullYear();
-  document.getElementById("stand").textContent = d.toLocaleDateString("de-DE");
-
-  const targetDate = new Date("2026-05-06T05:00:00");
-
-  function updateCountdown() {
-    const now = new Date();
-    const diff = targetDate - now;
-
-    const daysEl = document.getElementById("cd-days");
-    const hoursEl = document.getElementById("cd-hours");
-    const minutesEl = document.getElementById("cd-minutes");
-    const secondsEl = document.getElementById("cd-seconds");
-    const titleEl = document.getElementById("countdown-title");
-    const noteEl = document.getElementById("countdown-note");
-
-    if (diff <= 0) {
-      daysEl.textContent = "0";
-      hoursEl.textContent = "0";
-      minutesEl.textContent = "0";
-      secondsEl.textContent = "0";
-      titleEl.textContent = "Die Wahl läuft";
-      noteEl.textContent = "Jetzt kommt es auf jede Stimme an.";
-      return;
-    }
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-
-    daysEl.textContent = String(days);
-    hoursEl.textContent = String(hours).padStart(2, "0");
-    minutesEl.textContent = String(minutes).padStart(2, "0");
-    secondsEl.textContent = String(seconds).padStart(2, "0");
-  }
-
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-</script>
-
+ 
 <script>
   const d = new Date();
   document.getElementById("year").textContent = d.getFullYear();
@@ -365,11 +323,6 @@
 
     if (!popup || !closeBtn) return;
 
-    setTimeout(() => {
-      popup.classList.add("is-visible");
-      popup.setAttribute("aria-hidden", "false");
-    }, 220);
-
     function closePopup() {
       popup.classList.remove("is-visible");
       popup.setAttribute("aria-hidden", "true");
@@ -383,35 +336,7 @@
       }
     });
   })();
-
-  (function () {
-
-  const popup = document.getElementById("newsletterPopup");
-  const open = document.getElementById("newsletterOpen");
-  const close = document.getElementById("newsletterClose");
-
-  if (!popup || !open || !close) return;
-
-  open.addEventListener("click", function(e){
-    e.preventDefault();
-    popup.classList.add("is-visible");
-    popup.setAttribute("aria-hidden", "false");
-  });
-
-  close.addEventListener("click", function(){
-    popup.classList.remove("is-visible");
-    popup.setAttribute("aria-hidden", "true");
-  });
-
-  popup.addEventListener("click", function(e){
-    if(e.target.classList.contains("site-popup-backdrop")){
-      popup.classList.remove("is-visible");
-      popup.setAttribute("aria-hidden", "true");
-    }
-  });
-
-})();
-</script>  
+</script>
 </body>
 </html>
 
