@@ -69,7 +69,73 @@
   </div>
   </div>
 </div>
-    
+
+<div class="site-popup" id="newsletterPopup" aria-hidden="true">
+
+  <div class="site-popup-backdrop"></div>
+
+  <div class="site-popup-box" role="dialog" aria-modal="true">
+
+    <button class="site-popup-close" id="newsletterClose" aria-label="Fenster schließen">
+      ×
+    </button>
+
+    <p class="site-popup-kicker">
+      Newsletter
+    </p>
+
+    <h2 class="site-popup-title" style="text-align:center;">
+      Newsletter der Mitarbeitervertreter
+    </h2>
+
+    <div class="site-popup-content">
+
+      <p style="line-height:1.7;">
+        Wir möchten euch regelmäßig über aktuelle Themen,
+        Neuigkeiten und Entwicklungen rund um den Betriebsrat informieren.
+      </p>
+
+      <p style="line-height:1.7;">
+        Wenn ihr unseren Newsletter erhalten möchtet,
+        sendet uns bitte eine kurze Anmeldung per E-Mail an mitarbeitervertreter@gmx.de
+      </p>
+
+      <div class="popup-divider"></div>
+
+      <p style="line-height:1.7;">
+        Bitte gebt folgende Informationen an:
+      </p>
+
+      <ul>
+        <li>Vorname</li>
+        <li>Nachname</li>
+        <li>E-Mail-Adresse</li>
+      </ul>
+
+      <a 
+        class="btn primary"
+        href="mailto:mitarbeitervertreter@gmx.de?subject=Newsletter%20Anmeldung&body=Hallo%20Mitarbeitervertreter%2C%0A%0Aich%20möchte%20den%20Newsletter%20erhalten.%0A%0AVorname%3A%0A%0ANachname%3A%0A%0AE-Mail-Adresse%3A%0A%0AViele%20Grüße"
+      >
+        Newsletter per E-Mail anmelden
+      </a>
+
+      <p style="font-size:0.9rem; margin-top:15px;">
+  Mit dem Versand der Anmeldung erklärst du dich mit der Verarbeitung deiner
+  Daten zum Zweck des Newsletter-Versands einverstanden.
+  Weitere Informationen findest du in unserer
+  <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>.
+</p>
+      
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+  
   <!-- HEADER / NAV -->
   <header>
     <div class="wrap">
@@ -102,7 +168,7 @@
     <div class="hero-copy">
       <div class="hero-kicker">
         <span class="hero-kicker-dot"></span>
-        Betriebsratswahl 2026 · Liste 2
+        DEIN Betriebsrats · Liste 2
       </div>
 
       <h1 class="hero-title">
@@ -117,17 +183,15 @@
       </p>
 
       <div class="hero-actions hero-actions-main">
-        <a class="btn" href="kandidaten.html">Kandidaten</a>
+        <a class="btn" href="kandidaten.html">Unsere Mitglieder im BR</a>
         <a class="btn btn-outline" href="#programm">Programm</a>
-        <a class="btn primary" href="https://henkel.br-briefwahl.de" target="_blank" rel="noopener">
-          Briefwahl beantragen
-        </a>
+        <a class="btn primary" href="#" id="newsletterOpen">
+    Newsletter beantragen
+  </a>
       </div>
 
       <div class="hero-actions hero-actions-secondary">
         <a class="btn btn-outline" href="mailto:mitarbeitervertreter@gmx.de">E-Mail</a>
-        <a class="btn btn-ghost" href="https://www.instagram.com/mitarbeitervertreter/" target="_blank" rel="noopener">Instagram</a>
-        <a class="btn btn-ghost" href="https://www.youtube.com/watch?v=Tvz6zIN-K30" target="_blank" rel="noopener">Song</a>
       </div>
     </div>
 
@@ -143,53 +207,23 @@
       <div class="hero-facts">
         <div class="hero-fact">
           <span>NEU</span>
-          <strong>Download-Bereich verfügbar</strong>
+          <strong>Unser newsletter</strong>
         </div>
 
         <div class="hero-fact">
           <span>Inhalt</span>
-          <strong>One-Pager, Flyer & Poster</strong>
+          <strong>Neuigkeiten aus der BR-Arbeit</strong>
         </div>
 
         <div class="hero-fact">
           <span>Zugriff</span>
-          <strong>Jetzt im Menü unter „Downloads“</strong>
+          <strong>Jetzt über den Button links beantragen</strong>
         </div>
       </div>
     </aside>
   </div>
 </section>
 
-    
-<section class="wrap" style="margin-top:18px;">
-  <section class="card countdown-card">
-  
-    <h2 id="countdown-title">Countdown bis zum Wahlbeginn</h2>
-
-    <div class="countdown-grid" id="countdown">
-      <div class="countdown-box">
-        <strong id="cd-days">0</strong>
-        <span>Tage</span>
-      </div>
-      <div class="countdown-box">
-        <strong id="cd-hours">0</strong>
-        <span>Stunden</span>
-      </div>
-      <div class="countdown-box">
-        <strong id="cd-minutes">0</strong>
-        <span>Minuten</span>
-      </div>
-      <div class="countdown-box">
-        <strong id="cd-seconds">0</strong>
-        <span>Sekunden</span>
-      </div>
-    </div>
-
-    <p class="countdown-note" id="countdown-note">
-      Jede Stimme zählt.
-    </p>
-  </section>
-</section>
     
     <!-- START-INHALT -->
     <section class="wrap" style="margin-top:18px;">
